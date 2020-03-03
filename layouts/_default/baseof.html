@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="robots" content="noodp,noydir">
+  <meta name="pinterest" content="nopin">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ printf "%s%s" .Site.Params.brand.imgDir "favicon.png" | relURL }}">
+  <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ printf "%s%s" .Site.Params.brand.imgDir "icon-trans-256.png" | relURL }}">
+
+  {{- with .Permalink }}
+  <link rel="canonical" href="{{ . }}">
+  {{- end }}
+  {{- range .AlternativeOutputFormats }}
+  {{ printf `<link rel="%s" type="%s" href="%s" hreflang="%s"/>` .Rel .MediaType.Type .Permalink $.Site.LanguageCode | safeHTML }}
+  {{- end }}
+  {{ partial "styles-main.html" . }}
+  {{- partial "styles-type.html" . }}
+  {{- partial "structured-data.html" . }}
+  {{ partial "scripts-head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  {{- block "main" . }}{{ end -}}
+  {{- partial "footer.html" . }}
+  {{- partial "scripts-foot.html" . }}
+</body>
+</html>

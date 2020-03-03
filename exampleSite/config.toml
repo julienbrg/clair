@@ -1,0 +1,137 @@
+baseURL = "https://example.com"
+
+title = "Axiom A Hugo Theme"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+
+theme = "axiom"
+
+rssLimit = 100
+enableEmoji = true
+summaryLength = 40
+enableRobotsTXT = true
+pluralizelisttitles = false
+disableHugoGeneratorInject = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[permalinks]
+post = "/:filename"
+
+[params]
+mainSections = ["post"]
+analyticsId = "UA-DEV"
+adwordsId = "AW-DEV"
+adsenseId = "CA-PUB-DEV"
+adwordsConversionId = "ID-DEV"
+adwordsConversionValue = 0
+facebookApp = "FB-DEV"
+facebookPixel = "FB-DEV"
+disqusUser = "na"
+
+[params.pdf]
+dir = "pdf/"
+
+[params.fonts]
+theme = false
+
+# Based on 16px = 1rem
+# Percents are rounded up to nearest factor of 16
+[params.img]
+p33W = 688
+p33H = 344
+p66W = 1376
+p66H = 688
+p100W = 2048
+p100H = 1024
+p33Dir = "img/33p/"
+p66Dir = "img/66p/"
+p100Dir = "img/"
+pageDefault = "page-default.webp"
+
+[params.brand]
+domain = "example.com"
+email = "info@example.com"
+github = "example"
+facebook = "example"
+twitter = "example"
+instagram = "example"
+youtube = "example"
+pinterest = "example"
+linkedin = "example"
+stacko = "10101010"
+icon1To1 = "icon-1-1.png"
+icon2To1 = "icon-2-1.png"
+imgDir = "img/brand/"
+# SVG <svg> or IMG <img>
+# 1:1 Ratio (square) is best, but 2:1 (rectangle will work)
+# SVG: add css class "fill-current" to use theme colors, e.g.:
+# <svg class="fill-current"
+logo = "<svg class=\"fill-current\" viewBox=\"0 0 32 32\"><path d=\"M16,25 L32,25 L32,7 L28,7 L28,21 L26,21 L26,13 L22,13 L22,21 L18,21 L18,7 L16,7 L7,7 L7,11 L14,11 L14,21 L0,21 L0,25 L16,25 Z\"/></svg>"
+
+[outputs]
+home = ["HTML", "ATOM"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+taxonomyTerm = ["HTML"]
+
+[outputFormats]
+[outputFormats.ATOM]
+name = "ATOM"
+baseName = "feed"
+mediaType = "application/atom+xml"
+
+[mediaTypes]
+[mediaTypes."application/atom+xml"]
+suffixes = ["atom"]
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+definitionList = false
+footnote = false
+linkify = false
+strikethrough = false
+table = true
+taskList = false
+typographer = false
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.parser]
+attribute = false
+autoHeadingID = false
+[markup.highlight]
+codeFences = false
+noClasses = false
+tabWidth = 2
+
+[menu]
+[[menu.main]]
+url = "/posts/"
+name = "Posts"
+weight = 1
+
+[[menu.mobile]]
+url = "/posts/"
+name = "Posts"
+weight = 1
+
+[[menu.mobile]]
+url = "/about/"
+name = "About"
+weight = 2
+
+[[menu.foot]]
+url = "/posts/"
+name = "Posts"
+weight = 1
+
+[[menu.foot]]
+url = "/about/"
+name = "About"
+weight = 2
+
+[languages]
+[languages."en-us"]
+weight = 1
+languageName = "US English"

@@ -1,0 +1,248 @@
+/* cdata */
+/* Markdown to html (style-less, class-less) CMS content */
+/* Specificity is exact match to prevent excess cascading */
+.cdata {
+  /* <hx>, <p>, <ul>, <ol>:shared */
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > p,
+  & > ul,
+  & > ol,
+  & > blockquote p {
+    @apply text-raven-800;
+
+    /* Deal with long non-spaced strings that break layout */
+    word-break: break-word;
+    @apply break-words;
+  }
+
+  /* <h1>:main-headline, title */
+  /* ff: title, fs: 40px (2.5rem), fw: 400, lh: 48px (1.2), ls: normal */
+  & > h1:first-child {
+    @apply font-content-title;
+    @apply text-4xlp;
+    @apply font-normal;
+    line-height: 1.2;
+    @apply tracking-default;
+  }
+
+  /* <hx>:typography */
+  /* ff: sans, fw: 600, ls: -0.025em (-0.65px, -0.85px) */
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    @apply font-content-sans;
+    @apply font-semibold;
+    @apply tracking-tight;
+  }
+
+  /* <h1>:typography */
+  /* fs: 34px (2.125rem), lh: 38px (1.117647) */
+  & > h1 {
+    font-size: 2.125rem;
+    line-height: 1.117647;
+  }
+
+  /* <hx>:typography */
+  /* fs: 26px (1.625rem), lh: 30px (1.153845) */
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    font-size: 1.625rem;
+    line-height: 1.153845;
+  }
+
+  /* <p>, <ul>, <ol>:typography */
+  /* ff: serif, fs: 21px (1.3125rem), fw: 400, lh: 33px (1.57143), ls: -0.004em (-0.084px) */
+  & > p,
+  & > ul,
+  & > ol,
+  & > blockquote p {
+    @apply font-content-serif;
+    font-size: 1.3125rem;
+    @apply font-normal;
+    line-height: 1.57143;
+    letter-spacing: -0.004em;
+  }
+
+  /* margin-top */
+  & > *:first-child {
+    @apply mt-0;
+  }
+
+  & > h1 {
+    @apply mt-10;
+  }
+
+  /* included: div, iframe (embedded shortcodes) */
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > p,
+  & > blockquote,
+  & > table,
+  & > hr,
+  & > div,
+  & > iframe {
+    @apply mt-9;
+  }
+
+  & > ul,
+  & > ol {
+    @apply mt-8;
+  }
+
+  & > pre {
+    @apply mt-10;
+  }
+
+  /* margin-top:stacked */
+  /* excluded: blockquote, table, div, iframe (need extra space) */
+  & > h1 + h1,
+  & > h1 + h2,
+  & > h1 + h3,
+  & > h1 + h4,
+  & > h1 + h5,
+  & > h1 + h6,
+  & > h1 + p,
+  & > h1 + ul,
+  & > h1 + ol,
+  & > h2 + h2,
+  & > h2 + h3,
+  & > h2 + h4,
+  & > h2 + h5,
+  & > h2 + h6,
+  & > h2 + p,
+  & > h2 + ul,
+  & > h2 + ol,
+  & > h3 + h3,
+  & > h3 + h4,
+  & > h3 + h5,
+  & > h3 + h6,
+  & > h3 + p,
+  & > h3 + ul,
+  & > h3 + ol,
+  & > h4 + h4,
+  & > h4 + h5,
+  & > h4 + h6,
+  & > h4 + p,
+  & > h4 + ul,
+  & > h4 + ol,
+  & > h5 + h5,
+  & > h5 + h6,
+  & > h5 + p,
+  & > h5 + ul,
+  & > h5 + ol,
+  & > h6 + h6,
+  & > h6 + p,
+  & > h6 + ul,
+  & > h6 + ol {
+    @apply mt-3;
+  }
+
+  /* margin-top:nested */
+  & > ul ul,
+  & > ol ol,
+  & li ul,
+  & li ol,
+  & li p,
+  & > blockquote p {
+    @apply mt-0;
+  }
+
+  /* <a>:link, active, visited */
+  & > a:link,
+  & > p a:link,
+  & > ul li a:link,
+  & > ol li a:link,
+  & > blockquote p a:link,
+  & > a:active,
+  & > p a:active,
+  & > ul li a:active,
+  & > ol li a:active,
+  & > blockquote p a:active,
+  & > a:visited,
+  & > p a:visited,
+  & > ul li a:visited,
+  & > ol li a:visited,
+  & > blockquote p a:visited {
+    @apply text-blue-600;
+  }
+
+  /* <a>:hover */
+  & > a:hover,
+  & > p a:hover,
+  & > ul li a:hover,
+  & > ol li a:hover,
+  & > blockquote p a:hover {
+    @apply text-blue-800 underline;
+  }
+
+  /* <blockquote> */
+  & > blockquote {
+    @apply my-8;
+    @apply pl-5;
+    @apply border-l-4;
+    @apply border-raven-500;
+  }
+
+  /* Set above at <blockquote p> */
+  /* & > blockquote p {} */
+
+  /* <footer> or <cite> */
+  & > blockquote > footer,
+  & > blockquote > cite {
+    @apply block;
+    @apply text-base;
+    @apply text-raven-500;
+  }
+
+  /* <footer> or <cite>:dash */
+  & > blockquote > footer::before,
+  & > blockquote > cite::before {
+    content: "\2014 \00A0";
+  }
+
+  /* <ul>, <ol>, <li> */
+  & > ul:not(.list-none),
+  & > ol {
+    padding-inline-start: 1.875rem;
+  }
+
+  & > ul:not(.list-none) {
+    @apply list-disc;
+  }
+
+  & > ol {
+    @apply list-decimal;
+  }
+
+  /* <hr> */
+  & > hr {
+    @apply h-px;
+    background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.24), rgba(0,0,0,0));
+    border: 0;
+  }
+
+  /* <table> */
+  & > table {
+    @apply w-full;
+  }
+
+  /* <td>, <th> */
+  & td,
+  & th {
+    @apply px-2 py-1 border border-gray-400;
+  }
+}

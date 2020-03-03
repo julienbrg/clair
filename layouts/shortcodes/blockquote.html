@@ -1,0 +1,13 @@
+{{/*
+  Accepts 3 optional "postitional" parameters.
+  Example Shortcode Usage:
+  {{< blockquote "Quote text" "Footer text" "Cite text" >}}
+*/}}
+{{- if .Get 0 -}}
+<blockquote class="my-8 pl-5 border-l-4 border-raven-500">
+  <p>{{ .Get 0 }}</p>
+  {{- if .Get 1 }}
+  <footer class="block text-base text-raven-500">{{ .Get 1 }}{{ if .Get 2 }} <cite title="{{ .Get 2 }}">{{ .Get 2 }}</cite>{{ end }}</footer>
+  {{- end }}
+</blockquote>
+{{- end -}}

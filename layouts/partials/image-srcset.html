@@ -1,0 +1,24 @@
+{{- $img := "" }}
+{{- if .Params.featured }}
+  {{- if reflect.IsMap .Params.featured }}
+    {{- $img = .Params.featured.img }}
+  {{- else }}
+    {{- $img = .Params.featured }}
+  {{- end }}
+{{- end }}
+
+{{- $img = $img | default $.Site.Params.img.pageDefault }}
+
+{{- $imgP33Dir := .Params.imgp33Dir | default $.Site.Params.img.p33Dir }}
+{{- $imgP66Dir := .Params.imgp66Dir | default $.Site.Params.img.p66Dir }}
+{{- $imgP100Dir := .Params.imgp100Dir | default $.Site.Params.img.p100Dir }}
+
+{{- $imgP33Src := printf "%s%s" $imgP33Dir $img | relURL }}
+{{- $imgP66Src := printf "%s%s" $imgP66Dir $img | relURL }}
+{{- $imgP100Src := printf "%s%s" $imgP100Dir $img | relURL }}
+
+{{- $imgSrcSet := printf "%s %d%s, %s %d%s, %s %d%s" $imgP33Src $.Site.Params.img.p33W "w" $imgP66Src $.Site.Params.img.p66W "w" $imgP100Src $.Site.Params.img.p100W "w" -}}
+
+{{- $imgDict := dict "imgP33Src" $imgP33Src "imgP66Src" $imgP66Src "imgP100Src" $imgP100Src "imgSrcSet" $imgSrcSet -}}
+
+{{ return $imgDict }}

@@ -1,0 +1,23 @@
+{{- $img := partial "image-srcset.html" . }}
+<div class="sm:flex">
+  <div class="sm:flex-shrink-0">
+    <a class="block" href="{{ .RelPermalink }}"><img
+    class="sm:w-40 sm:h-40 object-cover"
+    src="{{ $img.imgP33Src }}"
+    srcset="{{ $img.imgSrcSet }}"
+    alt="{{ .Title }}"></a>
+  </div>
+  <div class="mt-4 sm:mt-0 sm:ml-10 font-content-sans">
+    <a class="block text-2xlp sm:text-2xl leading-tightly tracking-tightly font-semibold text-raven-800" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <a class="mt-2 block text-xl sm:text-base leading-tight tracking-normal font-normal text-raven-500" href="{{ .RelPermalink }}">
+      {{- $subtitle := "" -}}
+      {{- if .Params.subtitle }}
+      {{- $subtitle = .Params.subtitle | plainify }}
+      {{- else }}
+      {{- $subtitle = .Summary | plainify }}
+      {{- end }}
+      {{- $subtitle | truncate 125 " ..." -}}
+    </a>
+    <aside class="mt-6 text-smp leading-snug tracking-normal font-normal text-raven-500"><time datetime="{{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }}">{{ dateFormat "Jan 2, 2006" .Date.UTC }}</time></aside>
+  </div>
+</div>

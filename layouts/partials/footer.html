@@ -1,0 +1,8 @@
+<footer class="mx-4 mt-8 mb-6">
+  <hr class="mt-0 hr-fade">
+  {{ partial "menu-foot.html" . }}
+  <div class="mt-2 text-sm text-center text-gray-500">&#169; 2000-{{ dateFormat "2006" now.UTC }} {{ .Site.Title }}</div>
+  {{- if eq (trim .Page.RelPermalink "/") "about" }}
+  <div class="mt-2 text-sm text-center text-gray-500">{{ T "license" | safeHTML }}</div>
+  {{- end }}
+</footer>

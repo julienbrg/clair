@@ -1,0 +1,38 @@
+{{- with resources.Get "main.js" }}
+<script src="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}"></script>
+{{- end }}
+
+{{- with resources.Get "custom.js" }}
+<script src="{{ .RelPermalink | safeHTML }}"></script>
+{{- end }}
+
+{{- if in .Site.Params.mainSections .Type }}
+  {{- with resources.Get "prism.js" }}
+  <script defer src="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}"></script>
+  {{- end }}
+
+  <script>
+  (function() {
+    window.setTimeout(function(){
+      var gAds = document.createElement("script");
+      gAds.setAttribute("defer", "defer");
+      gAds.setAttribute("data-ad-client", "{{ .Site.Params.adsenseId }}");
+      gAds.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+      document.body.appendChild(gAds);
+    }, 2000);
+  })();
+  </script>
+{{- end }}
+
+<script>
+(function() {
+  window.setTimeout(function(){
+    var fbPixel = document.createElement("img");
+    fbPixel.setAttribute("width", "1");
+    fbPixel.setAttribute("height", "1");
+    fbPixel.setAttribute("style", "display:none");
+    fbPixel.src = "https://www.facebook.com/tr?id={{ .Site.Params.facebookPixel }}&amp;ev=PageView";
+    document.body.appendChild(fbPixel);
+  }, 1750);
+})();
+</script>

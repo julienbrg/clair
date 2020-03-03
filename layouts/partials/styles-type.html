@@ -1,0 +1,16 @@
+{{- if not (eq .Site.Params.fonts.theme false) }}
+<link rel="preload" href="/fonts/fell-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/charter-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/charter-400-normal-rest.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/charter-400-italic-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/charter-700-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/charter-700-italic-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/marat-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/marat-600-normal-latin.woff" as="font" type="font/woff" crossorigin>
+
+{{- with resources.Get "type.css" }}
+{{- $typeCSS := printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}
+<link rel="preload" as="style" href="{{ $typeCSS }}" media="all">
+<link rel="stylesheet" href="{{ $typeCSS }}" media="all">
+{{- end }}
+{{- end }}

@@ -1,0 +1,23 @@
+{{- with resources.Get "main.js" }}
+<link rel="preload" as="script" href="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}">
+{{- end }}
+
+{{- with resources.Get "custom.js" }}
+<link rel="preload" as="script" href="{{ .RelPermalink | safeHTML }}">
+{{- end }}
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://stats.g.doubleclick.net">
+<link rel="preconnect" href="https://www.googleadservices.com">
+
+{{- $gtag := printf "%s%s" "https://www.googletagmanager.com/gtag/js?id=" .Site.Params.analyticsId }}
+<link rel="preload" as="script" href="{{ $gtag | safeHTML }}">
+
+<script src="{{ $gtag | safeHTML }}"></script>
+<script>
+  window.dataLayer=window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','{{ .Site.Params.analyticsId }}');
+  gtag('config','{{ .Site.Params.adwordsId }}');
+</script>

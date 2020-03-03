@@ -1,0 +1,13 @@
+{{- $author := index .Site.Data.authors (.Params.author | default "default") }}
+<div class="flex items-center">
+  <div class="flex-shrink-0">
+    <img
+    class="w-14 h-14 object-cover p-05 rounded-full border border-blue-300"
+    src="{{ printf "%s%s%s" .Site.Params.img.p100Dir "authors/" $author.image | relURL }}"
+    alt="{{ $author.name }}">
+  </div>
+  <div class="flex-shrink-0 ml-2 leading-tight font-content-sans">
+    <a class="block text-base text-raven-800 hover:underline focus:underline" target="_blank" rel="noopener nofollow" title="{{ $author.name }}" href="{{ $author.uri | absURL }}">{{ $author.name }}</a>
+    <time class="text-base text-raven-500" datetime="{{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }}">{{ dateFormat "Jan 2, 2006" .Date.UTC }}</time>
+  </div>
+</div>
