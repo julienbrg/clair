@@ -8,7 +8,7 @@ SEO and Social Media features include Article sharing via Facebook and Twitter (
 
 ## Headings
 
-While headings in sizes H3-H6 are supported, they are styled to match H2. Anything smaller than H2 is smaller than a `<p>` and that does not look right.
+While headings in sizes H3-H6 are supported, they are styled to match H2. Anything smaller than H2 is smaller than a `<p>` and that doesn't look right.
 
 The first H1 of an element with the `cdata` class (`class="cdata"`) is a special case and is considered the main heading or Title, and will be styled uniquely from the rest to make it standout.
 
@@ -26,6 +26,16 @@ For citations to work, Hugo _Config_ file (`config.toml`) needs the Goldmark Ren
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
+```
+
+If you prefer not to turn on this setting, there is a `blockquote` shortcode provided. The first parameter is required, while the other two are optional:
+
+```markup
+# Definition
+{{< blockquote "Quote text" "Footer text" "Cite text" >}}
+
+# Example
+{{< blockquote "You can trade hours for dollars or ideas for millions." "Cactus Jack on" "The Shark Tank" >}}
 ```
 
 # Responsive Images
@@ -86,6 +96,14 @@ Target image sizes in kilobytes for each of the three sizes:
     - png < 30kb
 
 > Webp works best for images with larger px dimensions, files less than 256px typically end up larger.
+
+## Misc.
+
+IDE search scope:
+
+```shell
+-*/node_modules/*,-*/resources/*,-*/public/*,-*.min.js,-*.min.css,-*-lock.json,-*prism.js,-*alpine.js,-*.*project,-*.*workspace,<project>
+```
 
 ## License
 
