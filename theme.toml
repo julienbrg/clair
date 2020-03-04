@@ -1,8 +1,8 @@
-name = "Axiom Hugo Theme"
+name = "Axiom"
 license = "CC-BY-SA-4.0"
 licenselink = "https://github.com/jhauraw/axiom/blob/master/LICENSE"
 homepage = "https://github.com/jhauraw/axiom"
-description = "Axiom is designed to make the readers of your content and the search engines happy. A Hugo Theme."
+description = "Axiom is a Hugo theme designed to make the readers of your content and the search engines happy."
 tags = ["seo", "organic-search", "structured-data", "responsive-images", "srcset", "pagespeed-95", "sharing", "atom-feed", "npm-scripts", "custom-css", "custom-js", "blog", "fast", "responsive", "tailwindcss", "alpinejs", "seo"]
 features = ["seo", "organic-search", "structured-data", "responsive-images", "srcset", "pagespeed-95", "sharing", "atom-feed", "npm-scripts", "custom-css", "custom-js", "blog", "fast", "responsive", "tailwindcss", "alpinejs", "seo"]
 min_version = "0.60.0"
