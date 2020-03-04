@@ -16,7 +16,7 @@
   {{- range .AlternativeOutputFormats }}
   {{ printf `<link rel="%s" type="%s" href="%s" hreflang="%s"/>` .Rel .MediaType.Type .Permalink $.Site.LanguageCode | safeHTML }}
   {{- end }}
-  {{ partial "styles-main.html" . }}
+  {{ partial "styles-app.html" . }}
   {{- partial "styles-type.html" . }}
   {{- partial "structured-data.html" . }}
   {{ partial "scripts-head.html" . }}

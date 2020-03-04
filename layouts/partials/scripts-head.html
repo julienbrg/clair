@@ -1,4 +1,4 @@
-{{- with resources.Get "main.js" }}
+{{- with resources.Get "app.js" }}
 <link rel="preload" as="script" href="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}">
 {{- end }}
 

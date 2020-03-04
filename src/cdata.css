@@ -12,7 +12,7 @@
   & > p,
   & > ul,
   & > ol,
-  & > blockquote p {
+  & > blockquote > p {
     @apply text-raven-800;
 
     /* Deal with long non-spaced strings that break layout */
@@ -61,12 +61,12 @@
     line-height: 1.153845;
   }
 
-  /* <p>, <ul>, <ol>:typography */
+  /* <p>, <ul>, <ol>, <blockquote p>:typography */
   /* ff: serif, fs: 21px (1.3125rem), fw: 400, lh: 33px (1.57143), ls: -0.004em (-0.084px) */
   & > p,
   & > ul,
   & > ol,
-  & > blockquote p {
+  & > blockquote > p {
     @apply font-content-serif;
     font-size: 1.3125rem;
     @apply font-normal;
@@ -157,7 +157,7 @@
   & li ul,
   & li ol,
   & li p,
-  & > blockquote p {
+  & > blockquote > p {
     @apply mt-0;
   }
 
@@ -166,17 +166,17 @@
   & > p a:link,
   & > ul li a:link,
   & > ol li a:link,
-  & > blockquote p a:link,
+  & > blockquote > p a:link,
   & > a:active,
   & > p a:active,
   & > ul li a:active,
   & > ol li a:active,
-  & > blockquote p a:active,
+  & > blockquote > p a:active,
   & > a:visited,
   & > p a:visited,
   & > ul li a:visited,
   & > ol li a:visited,
-  & > blockquote p a:visited {
+  & > blockquote > p a:visited {
     @apply text-blue-600;
   }
 
@@ -185,33 +185,25 @@
   & > p a:hover,
   & > ul li a:hover,
   & > ol li a:hover,
-  & > blockquote p a:hover {
+  & > blockquote > p a:hover {
     @apply text-blue-800 underline;
   }
 
   /* <blockquote> */
   & > blockquote {
-    @apply my-8;
     @apply pl-5;
     @apply border-l-4;
-    @apply border-raven-500;
-  }
+    @apply border-raven-300;
 
-  /* Set above at <blockquote p> */
-  /* & > blockquote p {} */
-
-  /* <footer> or <cite> */
-  & > blockquote > footer,
-  & > blockquote > cite {
-    @apply block;
+    /* <blockquote footer, cite, or dash> */
     @apply text-base;
     @apply text-raven-500;
   }
 
-  /* <footer> or <cite>:dash */
-  & > blockquote > footer::before,
-  & > blockquote > cite::before {
-    content: "\2014 \00A0";
+  /* <blockquote p> */
+  & > blockquote > p {
+    /* see above at <blockquote p>:typography */
+    @apply text-raven-700;
   }
 
   /* <ul>, <ol>, <li> */

@@ -1,4 +1,4 @@
-{{- with resources.Get "main.js" }}
+{{- with resources.Get "app.js" }}
 <script src="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}"></script>
 {{- end }}
 
