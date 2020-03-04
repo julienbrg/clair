@@ -11,9 +11,8 @@
   & > h6,
   & > p,
   & > ul,
-  & > ol,
-  & > blockquote > p {
-    @apply text-raven-800;
+  & > ol {
+    @apply text-raven-840;
 
     /* Deal with long non-spaced strings that break layout */
     word-break: break-word;
@@ -66,7 +65,7 @@
   & > p,
   & > ul,
   & > ol,
-  & > blockquote > p {
+  & > blockquote p {
     @apply font-content-serif;
     font-size: 1.3125rem;
     @apply font-normal;
@@ -157,26 +156,30 @@
   & li ul,
   & li ol,
   & li p,
-  & > blockquote > p {
+  & > blockquote p {
     @apply mt-0;
   }
 
   /* <a>:link, active, visited */
-  & > a:link,
-  & > p a:link,
-  & > ul li a:link,
-  & > ol li a:link,
-  & > blockquote > p a:link,
   & > a:active,
-  & > p a:active,
-  & > ul li a:active,
-  & > ol li a:active,
-  & > blockquote > p a:active,
+  & > a:link,
   & > a:visited,
-  & > p a:visited,
-  & > ul li a:visited,
+  & > blockquote a:active,
+  & > blockquote a:link,
+  & > blockquote a:visited,
+  & > ol li a:active,
+  & > ol li a:link,
   & > ol li a:visited,
-  & > blockquote > p a:visited {
+  & > p a:active,
+  & > p a:link,
+  & > p a:visited,
+  & > ul li a:active,
+  & > ul li a:link,
+  & > ul li a:visited,
+  & > .footnotes a:active,
+  & > .footnotes a:link,
+  & > .footnotes a:visited
+  {
     @apply text-blue-600;
   }
 
@@ -185,11 +188,19 @@
   & > p a:hover,
   & > ul li a:hover,
   & > ol li a:hover,
-  & > blockquote > p a:hover {
+  & > blockquote a:hover,
+  & > .footnotes a:hover {
     @apply text-blue-800 underline;
   }
 
   /* <blockquote> */
+  /*
+   Needs to support blockquotes with multiple structures:
+   1 markdown: quote only, no footer, no cite
+   2 markdown: closing p tag </p>, plus cite
+   3 markdown: previous plus footer with child cite
+   4 shortcode: same as previous but text input only
+   */
   & > blockquote {
     @apply pl-5;
     @apply border-l-4;
@@ -201,7 +212,7 @@
   }
 
   /* <blockquote p> */
-  & > blockquote > p {
+  & > blockquote p {
     /* see above at <blockquote p>:typography */
     @apply text-raven-700;
   }
@@ -229,12 +240,43 @@
 
   /* <table> */
   & > table {
-    @apply w-full;
+    @apply w-full border-collapse;
+
+    /* <th> */
+    & th {
+      @apply font-semibold text-raven-700 p-2 bg-gray-100;
+    }
+
+    /* <td> */
+    & td {
+      @apply p-2 border-t border-gray-200;
+
+      &:first-child {
+        @apply border-gray-300;
+      }
+    }
   }
 
-  /* <td>, <th> */
-  & td,
-  & th {
-    @apply px-2 py-1 border border-gray-400;
+  /* footnotes */
+  & .footnotes {
+    @apply text-sm;
+    @apply text-raven-500;
+    & > hr {
+      @apply mt-6;
+      @apply mb-2;
+    }
+    & > ol {
+      @apply list-decimal;
+    }
+    /* workaround until hugo fixes
+     https://github.com/gohugoio/hugo/issues/6807 */
+    & .footnote-backref {
+      visibility: hidden;
+      &::before {
+        content: "\2191 \00A0";
+        visibility: visible;
+      }
+    }
   }
+  /* end */
 }
