@@ -5,8 +5,8 @@ date = "2019-02-28"
 aliases = ["about-us","about-hugo","contact"]
 author = "Hugo Authors"
 [featured]
-img = "about.webp"
-caption = "Backcountry views. Cottonwood Lakes, Lone Pine, CA."
+img = "page-default.webp"
+caption = "Lorem est tota propiore conpellat pectoribus de."
 +++
 
 Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.

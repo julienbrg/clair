@@ -11,7 +11,7 @@ enableEmoji = true
 summaryLength = 40
 enableRobotsTXT = true
 pluralizelisttitles = false
-disableHugoGeneratorInject = true
+footnoteReturnLinkContents = "&#8617;"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
@@ -89,7 +89,7 @@ suffixes = ["atom"]
 [markup.goldmark]
 [markup.goldmark.extensions]
 definitionList = false
-footnote = false
+footnote = true
 linkify = false
 strikethrough = false
 table = true
