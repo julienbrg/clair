@@ -5,7 +5,6 @@ Axiom is designed to make the readers of your content and the search engines hap
 SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Responsive images (3 sizes) with `srcset`, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Config includes isolated `development` and `production` environments so tracker's like Analytics don't fire false positives. Built with Tailwind CSS, Alpine JS (not used but included), and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
 
 # Markdown
-
 ## Headings
 
 While headings in sizes H3-H6 are supported, they are styled to match H2. Anything smaller than H2 is smaller than a `<p>` and that doesn't look right.
@@ -13,6 +12,10 @@ While headings in sizes H3-H6 are supported, they are styled to match H2. Anythi
 The first H1 of an element with the `cdata` class (`class="cdata"`) is a special case and is considered the main heading or Title, and will be styled uniquely from the rest to make it standout.
 
 ## Blockquotes
+
+Quote only:
+
+    > Don't communicate by sharing memory, share memory by communicating.
 
 With citations:
 
@@ -28,7 +31,7 @@ For citations to work, Hugo _Config_ file (`config.toml`) needs the Goldmark Ren
 unsafe = true
 ```
 
-If you prefer not to turn on this setting, there is a `blockquote` shortcode provided. The first parameter is required, while the other two are optional:
+If you prefer __not__ to turn on this setting, there is a `blockquote` shortcode provided. The first parameter is required, while the other two are optional:
 
 ```markup
 # Definition
@@ -79,6 +82,8 @@ p100Dir = "img/"
 pageDefault = "page-default.webp"
 ```
 
+For example, given these settings, when you finish a new post, you would output the Feature image in the three sizes and store each one in it's respective directory. When the website is generated, the source set will be created pointing to the three images, with the `66%` size default.
+
 ## Image Optimization
 
 Target image sizes in kilobytes for each of the three sizes:
@@ -97,12 +102,17 @@ Target image sizes in kilobytes for each of the three sizes:
 
 > Webp works best for images with larger px dimensions, files less than 256px typically end up larger.
 
+# Typography
+## Design
+
+TODO.
+
 ## Misc.
 
 IDE search scope:
 
 ```shell
--*/node_modules/*,-*/resources/*,-*/public/*,-*.min.js,-*.min.css,-*-lock.json,-*prism.js,-*alpine.js,-*.*project,-*.*workspace,<project>
+-*/node_modules/*,-*/resources/*,-*/public/*,-*/assets/*.js,-*/assets/*.css,-*.min.js,-*.min.css,-*-lock.json,-*prism.js,-*alpine.js,-*.*project,-*.*workspace,<project>
 ```
 
 ## License
