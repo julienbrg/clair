@@ -4,6 +4,28 @@ Axiom is designed to make the readers of your content and the search engines hap
 
 SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Responsive images (3 sizes) with `srcset`, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Config includes isolated `development` and `production` environments so tracker's like Analytics don't fire false positives. Built with Tailwind CSS, Alpine JS (not used but included), and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
 
+# Installation
+## Existing Website
+
+> The instructions below, assume an existing Hugo website `example.com` in a working directory named `sites`.
+
+> When typing/copying the terminal commands below, don't include the prompt portion: `~ %`
+
+```shell
+~ % cd ~/sites/example.com/
+
+# Only if not already a git repository
+example.com % git init
+
+# Add the Axiom Hugo theme into the `themes` directory
+example.com % git submodule add https://github.com/jhauraw/axiom.git themes/axiom
+example.com % git submodule init
+example.com % git submodule update
+
+# To update the theme in the future, run
+example.com % git submodule update --remote themes/axiom
+```
+
 # Markdown
 ## Headings
 
