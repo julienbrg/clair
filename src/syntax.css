@@ -48,8 +48,6 @@ pre[class*="language-"] {
   @apply bg-gray-100;
 }
 
-/* Atom-dark theme for `prism.js` @gibsjose, modified */
-
 /* color mods */
 .token.url,
 .token.string,
@@ -80,14 +78,14 @@ pre[class*="language-"] {
 .token.punctuation {
   color: #93ddfd; /*  blue */
 }
-/* end color mods */
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #7c7c7c;
+  @apply text-gray-500;
 }
+/* end color mods */
 
 .token.namespace {
   opacity: .7;
@@ -99,7 +97,6 @@ pre[class*="language-"] {
 
 .token.class-name {
   color: #ffffb6;
-  text-decoration: underline;
 }
 
 .token.constant {

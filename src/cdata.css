@@ -12,7 +12,7 @@
   & > p,
   & > ul,
   & > ol {
-    @apply text-raven-840;
+    @apply text-raven-900a;
 
     /* Deal with long non-spaced strings that break layout */
     word-break: break-word;
