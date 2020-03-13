@@ -68,7 +68,7 @@
     "name": {{ .Site.Title }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ printf "%s%s" .Site.Params.img.p100Dir .Site.Params.brand.icon1To1 | absURL }}
+      "url": {{ printf "%s%s" .Site.Params.brand.imgDir .Site.Params.brand.icon1To1 | absURL }}
     }
   },
   "datePublished": {{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }},
