@@ -1,10 +1,9 @@
-{{- $img := partial "image-srcset.html" . }}
+{{- $imgSrc := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature "preset" "summary") }}
 <div class="sm:flex">
   <div class="sm:flex-shrink-0">
     <a class="block" href="{{ .RelPermalink }}"><img
     class="sm:w-40 sm:h-40 object-cover"
-    src="{{ $img.imgP66Src }}"
-    srcset="{{ $img.imgSrcSet }}"
+    src="{{ $imgSrc }}"
     alt="{{ .Title }}"></a>
   </div>
   <div class="mt-4 sm:mt-0 sm:ml-10 font-content-sans">

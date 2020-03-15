@@ -1,8 +1,8 @@
 <main>
-  {{- if .Params.featured }}
+  {{- if .Params.feature }}
   <div class="mt-8 mx-4 md:mx-8">
     <div class="mx-auto w-full max-w-5xl">
-      {{- partial "featured.html" . }}
+      {{- partial "feature" . }}
     </div>
   </div>
   {{- end -}}
@@ -14,16 +14,16 @@
 
         <div class="mt-4 flex items-center">
           <div class="w-full">
-            {{ partial "author.html" . }}
+            {{ partial "author" . }}
           </div>
           <div>
-            {{ partial "share.html" . }}
+            {{ partial "share" . }}
           </div>
         </div>
 
         {{ .Content }}
       </article>
-      {{ partial "ad-post-bottom.html" . }}
+      {{ partial "ad-post-bottom" . }}
     </div>
   </div>
 </main>

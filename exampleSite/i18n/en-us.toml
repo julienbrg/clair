@@ -1,8 +1,8 @@
 [tagline]
-other = "Example Company tagline"
+other = "Example Company Tagline"
 
 [description]
 other = "Example Company description."
 
-[license]
-other = "Created with Hugo, Tailwind CSS, Alpine JS, &amp; Licensed MIT"
+[copyrightBy]
+other = "Example Company"

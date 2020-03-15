@@ -1,8 +1,6 @@
 <footer class="mx-4 mt-8 mb-6">
   <hr class="mt-0 hr-fade">
-  {{ partial "menu-foot.html" . }}
-  <div class="mt-2 text-sm text-center text-gray-500">&#169; 2000-{{ dateFormat "2006" now.UTC }} {{ .Site.Title }}</div>
-  {{- if eq (trim .Page.RelPermalink "/") "about" }}
-  <div class="mt-2 text-sm text-center text-gray-500">{{ T "license" | safeHTML }}</div>
-  {{- end }}
+  {{ partial "menu-foot" . }}
+  <div class="mt-2 text-sm text-center text-gray-500">&#169; {{ .Site.Params.copyrightYear }}-{{ dateFormat "2006" now.UTC }} {{ T "copyrightBy" | default .Site.Title }}</div>
+  <div class="mt-2 text-xs text-center text-gray-500">{{ printf `%s <a href="%s">%s</a>` (T "poweredby") .Site.Data.theme.url (T "theme") | safeHTML }}</div>
 </footer>

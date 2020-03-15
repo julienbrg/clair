@@ -16,7 +16,7 @@
     window.setTimeout(function(){
       var gAds = document.createElement("script");
       gAds.setAttribute("defer", "defer");
-      gAds.setAttribute("data-ad-client", "{{ .Site.Params.adsenseId }}");
+      gAds.setAttribute("data-ad-client", "{{ .Site.Params.services.adsenseId }}");
       gAds.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
       document.body.appendChild(gAds);
     }, 2000);
@@ -31,7 +31,7 @@
     fbPixel.setAttribute("width", "1");
     fbPixel.setAttribute("height", "1");
     fbPixel.setAttribute("style", "display:none");
-    fbPixel.src = "https://www.facebook.com/tr?id={{ .Site.Params.facebookPixel }}&amp;ev=PageView";
+    fbPixel.src = "https://www.facebook.com/tr?id={{ .Site.Params.services.facebookPixel }}&amp;ev=PageView";
     document.body.appendChild(fbPixel);
   }, 1750);
 })();

@@ -1,3 +1,11 @@
+{{/* .ico at root, not in brand folder */}}
+{{- $imgFavIconIco := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Site.Params.brand.faviconIco) -}}
+
+{{- $imgFavIconAlt := printf "%s%s" .Site.Params.cdn.brand .Site.Params.brand.faviconAlt -}}
+{{- $imgFavIconAlt = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgFavIconAlt) -}}
+
+{{- $imgAppIcon := printf "%s%s" .Site.Params.cdn.brand .Site.Params.brand.icon1To1 -}}
+{{- $imgAppIcon = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgAppIcon) -}}
 <!doctype html>
 <html lang="{{ .Site.LanguageCode }}">
 <head>
@@ -6,9 +14,9 @@
   <meta name="robots" content="noodp,noydir">
   <meta name="pinterest" content="nopin">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ printf "%s%s" .Site.Params.brand.imgDir "favicon.png" | relURL }}">
-  <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
-  <link rel="apple-touch-icon" href="{{ printf "%s%s" .Site.Params.brand.imgDir "icon-trans-256.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ $imgFavIconAlt }}">
+  <link rel="icon" type="image/x-icon" href="{{ $imgFavIconIco }}">
+  <link rel="apple-touch-icon" href="{{ $imgAppIcon }}">
 
   {{- with .Permalink }}
   <link rel="canonical" href="{{ . }}">
@@ -16,15 +24,15 @@
   {{- range .AlternativeOutputFormats }}
   {{ printf `<link rel="%s" type="%s" href="%s" hreflang="%s"/>` .Rel .MediaType.Type .Permalink $.Site.LanguageCode | safeHTML }}
   {{- end }}
-  {{ partial "styles-app.html" . }}
-  {{- partial "styles-type.html" . }}
-  {{- partial "structured-data.html" . }}
-  {{ partial "scripts-head.html" . }}
+  {{ partial "styles-app" . }}
+  {{- partial "styles-type" . }}
+  {{- partial "structured-data" . }}
+  {{ partial "scripts-head" . }}
 </head>
 <body>
-  {{ partial "header.html" . }}
+  {{ partial "header" . }}
   {{- block "main" . }}{{ end -}}
-  {{- partial "footer.html" . }}
-  {{- partial "scripts-foot.html" . }}
+  {{- partial "footer" . }}
+  {{- partial "scripts-foot" . }}
 </body>
 </html>

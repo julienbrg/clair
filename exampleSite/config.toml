@@ -20,34 +20,46 @@ post = "/:filename"
 
 [params]
 mainSections = ["post"]
+copyrightYear = 2000
+
+[params.services]
 analyticsId = "UA-DEV"
 adwordsId = "AW-DEV"
 adsenseId = "CA-PUB-DEV"
+adsenseAdSlotId = "ID-DEV"
 adwordsConversionId = "ID-DEV"
 adwordsConversionValue = 0
 facebookApp = "FB-DEV"
 facebookPixel = "FB-DEV"
 disqusUser = "na"
 
-[params.pdf]
-dir = "pdf/"
-
-[params.fonts]
+[params.font]
 theme = false
 
-# Based on 16px = 1rem
-# Percents are rounded up to nearest factor of 16
+[params.cdn]
+provider = ""
+version = ""
+pdf = "pdf/"
+brand = "brand/"
+author = "author/"
+font = "font/"
+local = "img/"
+host = "https://res.cloudinary.com/examplecom/"
+image = "image/upload/"
+video = "video/upload/"
+raw = "raw/upload/"
+type = "image"
+
+[params.cdn.presets]
+base = "f_auto,q_auto/"
+page = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
+feature = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
+summary = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
+
 [params.img]
-p33W = 688
-p33H = 344
-p66W = 1376
-p66H = 688
-p100W = 2048
-p100H = 1024
-p33Dir = "img/33p/"
-p66Dir = "img/66p/"
-p100Dir = "img/"
-pageDefault = "page-default.webp"
+width = "2048"
+height = "1024"
+default = "page-default.webp"
 
 [params.brand]
 domain = "example.com"
@@ -60,9 +72,12 @@ youtube = "example"
 pinterest = "example"
 linkedin = "example"
 stacko = "10101010"
+# .ico at root, b/c cdn public ids don't
+# include .ext, so sees both favs as same item
+faviconIco = "favicon.ico"
+faviconAlt = "favicon.png"
 icon1To1 = "icon-1-1.png"
 icon2To1 = "icon-2-1.png"
-imgDir = "img/brand/"
 # SVG <svg> or IMG <img>
 # 1:1 Ratio (square) is best, but 2:1 (rectangle will work)
 # SVG: add css class "fill-current" to use theme colors, e.g.:

@@ -1,0 +1,14 @@
+{{- $src := .src | default .Site.Params.img.default }}
+{{- $type := .type | default .Site.Params.cdn.type }}
+{{- $preset := index .Site.Params.cdn.presets .preset | default "" }}
+{{- $resource := "" }}
+
+{{/* local src, no cdn */}}
+{{- $resource = printf "%s%s" .Site.Params.cdn.local $src | relURL }}
+
+{{- if eq "cloudinary" .Site.Params.cdn.provider -}}
+{{- $host := printf "%s%s" .Site.Params.cdn.host (index .Site.Params.cdn $type) }}
+{{- $resource = printf "%s%s%s%s" $host $preset .Site.Params.cdn.version $src }}
+{{- end -}}
+
+{{ return $resource }}

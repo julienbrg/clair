@@ -1,9 +1,11 @@
-{{- $author := index .Site.Data.authors (.Params.author | default "default") }}
+{{- $author := index .Site.Data.author (.Params.author | default "default") }}
+{{- $imgAuthor := printf "%s%s" .Site.Params.cdn.author $author.image }}
+{{- $imgAuthor = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgAuthor) }}
 <div class="flex items-center">
   <div class="flex-shrink-0">
     <img
     class="w-14 h-14 object-cover p-05 rounded-full border border-blue-300"
-    src="{{ printf "%s%s%s" .Site.Params.img.p100Dir "authors/" $author.image | relURL }}"
+    src="{{ $imgAuthor }}"
     alt="{{ $author.name }}">
   </div>
   <div class="flex-shrink-0 ml-2 leading-tight font-content-sans">

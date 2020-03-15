@@ -90,6 +90,7 @@
   & > h6,
   & > p,
   & > blockquote,
+  & > figure,
   & > table,
   & > hr,
   & > div,
@@ -167,6 +168,9 @@
   & > blockquote a:active,
   & > blockquote a:link,
   & > blockquote a:visited,
+  & > figure figcaption a:active,
+  & > figure figcaption a:link,
+  & > figure figcaption a:visited,
   & > ol li a:active,
   & > ol li a:link,
   & > ol li a:visited,
@@ -189,6 +193,7 @@
   & > ul li a:hover,
   & > ol li a:hover,
   & > blockquote a:hover,
+  & > figure figcaption a:hover,
   & > .footnotes a:hover {
     @apply text-blue-800 underline;
   }

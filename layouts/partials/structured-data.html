@@ -1,6 +1,12 @@
-{{- $pageImg := partial "image-srcset.html" . }}
-{{- if .Params.featured }}
-{{ printf `<link rel="preload" as="image" href="%s" imagesrcset="%s">` $pageImg.imgP66Src $pageImg.imgSrcSet | safeHTML }}
+{{- $imgFeature := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature "preset" "feature") -}}
+
+{{- $imgMeta := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature) -}}
+
+{{- $imgBrand := printf "%s%s" .Site.Params.cdn.brand .Site.Params.brand.icon1To1 -}}
+{{- $imgBrand = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgBrand) -}}
+
+{{- if .Params.feature }}
+<link rel="preload" as="image" href="{{ $imgFeature }}">
 {{ end }}
 
 {{- $title := "" -}}
@@ -21,21 +27,21 @@
   {{- $description = printf "%s %s" .Params.subtitle $description }}
 {{- end }}
 
-{{- $author := index .Site.Data.authors (.Params.author | default "default") }}
+{{- $author := index .Site.Data.author (.Params.author | default "default") }}
 
 <meta property="og:title" content="{{ if .IsHome }}{{ T "tagline" }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<link rel="image_src" href="{{ $pageImg.imgP100Src | absURL }}">
-<meta property="og:image" content="{{ $pageImg.imgP100Src | absURL }}">
-<meta property="og:image:width" content="{{ .Site.Params.img.p100W }}">
-<meta property="og:image:height" content="{{ .Site.Params.img.p100H }}">
+<link rel="image_src" href="{{ $imgMeta | absURL }}">
+<meta property="og:image" content="{{ $imgMeta | absURL }}">
+<meta property="og:image:width" content="{{ .Site.Params.img.width }}">
+<meta property="og:image:height" content="{{ .Site.Params.img.height }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" | default "en_US" }}">
 <meta property="og:description" content="{{ $description | plainify }}">
 <meta name="description" content="{{ $description | plainify }}">
 <meta property="og:updated_time" content="{{ dateFormat "2006-01-02T15:04:05Z" .Lastmod.UTC | safeHTML }}">
-<meta property="fb:app_id" content="{{ .Site.Params.facebookApp }}">
+<meta property="fb:app_id" content="{{ .Site.Params.services.facebookApp }}">
 <meta name="author" content="{{ $author.name }}">
 <meta property="article:author" content="{{ $author.uri | absURL }}">
 <meta property="article:published_time" content="{{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }}">
@@ -53,7 +59,7 @@
   "alternativeHeadline": {{ . | plainify }},
   {{- end }}
   "url": {{ .Permalink }},
-  "image": {{ $pageImg.imgP100Src | absURL }},
+  "image": {{ $imgMeta | absURL }},
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": {{ .Permalink }}
@@ -68,7 +74,7 @@
     "name": {{ .Site.Title }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ printf "%s%s" .Site.Params.brand.imgDir .Site.Params.brand.icon1To1 | absURL }}
+      "url": {{ $imgBrand | absURL }}
     }
   },
   "datePublished": {{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }},

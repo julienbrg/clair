@@ -1,15 +1,21 @@
-{{- if not (eq .Site.Params.fonts.theme false) }}
-<link rel="preload" href="/fonts/fell-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/charter-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/charter-400-normal-rest.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/charter-400-italic-latin.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/charter-700-normal-latin.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/charter-700-italic-latin.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/marat-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/marat-600-normal-latin.woff" as="font" type="font/woff" crossorigin>
+{{- if not (eq .Site.Params.font.theme false) }}
+{{- $host := .Site.Params.cdn.font | relURL -}}
+{{- if eq "cloudinary" .Site.Params.cdn.provider -}}
+{{- $host = printf "%s%s%s%s" .Site.Params.cdn.host .Site.Params.cdn.raw .Site.Params.cdn.version .Site.Params.cdn.font -}}
+{{- end -}}
+<link rel="preload" href="{{ $host }}fell-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}charter-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}charter-400-normal-rest.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}charter-400-italic-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}charter-700-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}charter-700-italic-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}marat-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ $host }}marat-600-normal-latin.woff" as="font" type="font/woff" crossorigin>
 
-{{- with resources.Get "type.css" }}
-{{- $typeCSS := printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}
+{{- with resources.Get "type.css" -}}
+{{- $vars := dict "host" $host "Site" $.Site "Page" . -}}
+{{- $typeCSS := . | resources.ExecuteAsTemplate "type.css" $vars -}}
+{{- $typeCSS = printf "%s?v=%d" $typeCSS.RelPermalink now.Unix | safeHTML }}
 <link rel="preload" as="style" href="{{ $typeCSS }}" media="all">
 <link rel="stylesheet" href="{{ $typeCSS }}" media="all">
 {{- end }}
