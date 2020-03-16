@@ -1,8 +1,6 @@
 {{- if not (eq .Site.Params.font.theme false) }}
-{{- $host := .Site.Params.cdn.font | relURL -}}
-{{- if eq "cloudinary" .Site.Params.cdn.provider -}}
-{{- $host = printf "%s%s%s%s" .Site.Params.cdn.host .Site.Params.cdn.raw .Site.Params.cdn.version .Site.Params.cdn.font -}}
-{{- end -}}
+{{- $src := printf "%s%s" $.Site.Params.path.font "" -}}
+{{- $host := partial "cdn-src" (dict "Site" $.Site "Page" . "src" $src "type" "raw") -}}
 <link rel="preload" href="{{ $host }}fell-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="{{ $host }}charter-400-normal-latin.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="{{ $host }}charter-400-normal-rest.woff" as="font" type="font/woff" crossorigin>

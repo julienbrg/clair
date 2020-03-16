@@ -1,8 +1,8 @@
 {{- $imgFeature := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature "preset" "feature") -}}
 
-{{- $imgMeta := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature) -}}
+{{- $imgMeta := partial "cdn-src" (dict "Site" $.Site "Page" . "src" (.Params.feature | default .Site.Params.img.default)) -}}
 
-{{- $imgBrand := printf "%s%s" .Site.Params.cdn.brand .Site.Params.brand.icon1To1 -}}
+{{- $imgBrand := printf "%s%s" .Site.Params.path.brand .Site.Params.brand.icon1To1 -}}
 {{- $imgBrand = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgBrand) -}}
 
 {{- if .Params.feature }}

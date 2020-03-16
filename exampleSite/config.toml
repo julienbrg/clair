@@ -37,20 +37,26 @@ disqusUser = "na"
 theme = false
 
 [params.cdn]
-provider = ""
-version = ""
-pdf = "pdf/"
-brand = "brand/"
-author = "author/"
-font = "font/"
-local = "img/"
-host = "https://res.cloudinary.com/examplecom/"
-image = "image/upload/"
-video = "video/upload/"
-raw = "raw/upload/"
+provider = "local"
 type = "image"
 
-[params.cdn.presets]
+[params.path]
+image = "image/"
+video = "video/"
+author = "image/author/"
+brand = "image/brand/"
+font = "font/"
+pdf = "pdf/"
+localAbsURL = false
+
+[params.cloudinary]
+host = "https://res.cloudinary.com/examplecom/"
+version = ""
+image = "image/upload/"
+raw = "raw/upload/"
+video = "video/upload/"
+
+[params.cloudinary.presets]
 base = "f_auto,q_auto/"
 page = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
 feature = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"

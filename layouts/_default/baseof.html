@@ -1,10 +1,10 @@
 {{/* .ico at root, not in brand folder */}}
 {{- $imgFavIconIco := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Site.Params.brand.faviconIco) -}}
 
-{{- $imgFavIconAlt := printf "%s%s" .Site.Params.cdn.brand .Site.Params.brand.faviconAlt -}}
+{{- $imgFavIconAlt := printf "%s%s" .Site.Params.path.brand .Site.Params.brand.faviconAlt -}}
 {{- $imgFavIconAlt = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgFavIconAlt) -}}
 
-{{- $imgAppIcon := printf "%s%s" .Site.Params.cdn.brand .Site.Params.brand.icon1To1 -}}
+{{- $imgAppIcon := printf "%s%s" .Site.Params.path.brand .Site.Params.brand.icon1To1 -}}
 {{- $imgAppIcon = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgAppIcon) -}}
 <!doctype html>
 <html lang="{{ .Site.LanguageCode }}">

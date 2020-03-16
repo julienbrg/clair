@@ -1,5 +1,5 @@
 {{- $author := index .Site.Data.author (.Params.author | default "default") }}
-{{- $imgAuthor := printf "%s%s" .Site.Params.cdn.author $author.image }}
+{{- $imgAuthor := printf "%s%s" .Site.Params.path.author $author.image }}
 {{- $imgAuthor = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgAuthor) }}
 <div class="flex items-center">
   <div class="flex-shrink-0">

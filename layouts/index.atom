@@ -18,12 +18,12 @@
   <rights>{{ . }}</rights>
   {{- end }}
   {{- with .Site.Params.brand.icon1To1 }}
-  {{- $icon1To1 := printf "%s%s" $.Site.Params.cdn.brand . }}
+  {{- $icon1To1 := printf "%s%s" $.Site.Params.path.brand . }}
   {{- $icon1To1 = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $icon1To1) }}
   <icon>{{ $icon1To1 | absURL }}</icon>
   {{- end }}
   {{- with .Site.Params.brand.icon2To1 }}
-  {{- $icon2To1 := printf "%s%s" $.Site.Params.cdn.brand . }}
+  {{- $icon2To1 := printf "%s%s" $.Site.Params.path.brand . }}
   {{- $icon2To1 = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $icon2To1) }}
   <logo>{{ $icon2To1 | absURL }}</logo>
   {{- end }}

@@ -2,5 +2,5 @@
   <hr class="mt-0 hr-fade">
   {{ partial "menu-foot" . }}
   <div class="mt-2 text-sm text-center text-gray-500">&#169; {{ .Site.Params.copyrightYear }}-{{ dateFormat "2006" now.UTC }} {{ T "copyrightBy" | default .Site.Title }}</div>
-  <div class="mt-2 text-xs text-center text-gray-500">{{ printf `%s <a href="%s">%s</a>` (T "poweredby") .Site.Data.theme.url (T "theme") | safeHTML }}</div>
+  {{ partial "attribution" . }}
 </footer>
