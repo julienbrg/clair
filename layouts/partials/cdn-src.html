@@ -4,11 +4,7 @@
 {{- $resource := "" }}
 
 {{/* default: params.cdn.provider=local */}}
-{{- if eq .Site.Params.path.localAbsURL true -}}
-{{- $resource = .src | absURL }}
-{{- else -}}
 {{- $resource = .src | relURL }}
-{{- end -}}
 
 {{- if eq "cloudinary" $provider -}}
 {{- $type = index .Site.Params.cloudinary $type }}

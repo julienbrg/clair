@@ -3,7 +3,7 @@
 {{- end }}
 
 {{- with resources.Get "custom.js" }}
-<script src="{{ .RelPermalink | safeHTML }}"></script>
+<script src="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}"></script>
 {{- end }}
 
 {{- if in .Site.Params.mainSections .Type }}
@@ -11,19 +11,22 @@
   <script defer src="{{ printf "%s?v=%d" .RelPermalink now.Unix | safeHTML }}"></script>
   {{- end }}
 
+  {{- with .Site.Params.services.adsenseId }}
   <script>
   (function() {
     window.setTimeout(function(){
       var gAds = document.createElement("script");
       gAds.setAttribute("defer", "defer");
-      gAds.setAttribute("data-ad-client", "{{ .Site.Params.services.adsenseId }}");
+      gAds.setAttribute("data-ad-client", "{{ . }}");
       gAds.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
       document.body.appendChild(gAds);
     }, 2000);
   })();
   </script>
+  {{- end }}
 {{- end }}
 
+{{- with .Site.Params.services.facebookPixel }}
 <script>
 (function() {
   window.setTimeout(function(){
@@ -31,8 +34,9 @@
     fbPixel.setAttribute("width", "1");
     fbPixel.setAttribute("height", "1");
     fbPixel.setAttribute("style", "display:none");
-    fbPixel.src = "https://www.facebook.com/tr?id={{ .Site.Params.services.facebookPixel }}&amp;ev=PageView";
+    fbPixel.src = "https://www.facebook.com/tr?id={{ . }}&amp;ev=PageView";
     document.body.appendChild(fbPixel);
   }, 1750);
 })();
 </script>
+{{- end }}

@@ -6,6 +6,7 @@ defaultContentLanguage = "en-us"
 
 theme = "axiom"
 
+canonifyURLs = false
 rssLimit = 100
 enableEmoji = true
 summaryLength = 40
@@ -33,13 +34,6 @@ facebookApp = "FB-DEV"
 facebookPixel = "FB-DEV"
 disqusUser = "na"
 
-[params.font]
-theme = false
-
-[params.cdn]
-provider = "local"
-type = "image"
-
 [params.path]
 image = "image/"
 video = "video/"
@@ -47,10 +41,13 @@ author = "image/author/"
 brand = "image/brand/"
 font = "font/"
 pdf = "pdf/"
-localAbsURL = false
+
+[params.cdn]
+provider = "local"
+type = "image"
 
 [params.cloudinary]
-host = "https://res.cloudinary.com/examplecom/"
+host = "https://res.cloudinary.com/CLOUD_NAME/"
 version = ""
 image = "image/upload/"
 raw = "raw/upload/"
@@ -67,6 +64,10 @@ width = "2048"
 height = "1024"
 default = "page-default.webp"
 
+[params.font]
+type = ""
+files = []
+
 [params.brand]
 domain = "example.com"
 email = "info@example.com"
@@ -78,16 +79,10 @@ youtube = "example"
 pinterest = "example"
 linkedin = "example"
 stacko = "10101010"
-# .ico at root, b/c cdn public ids don't
-# include .ext, so sees both favs as same item
 faviconIco = "favicon.ico"
 faviconAlt = "favicon.png"
 icon1To1 = "icon-1-1.png"
 icon2To1 = "icon-2-1.png"
-# SVG <svg> or IMG <img>
-# 1:1 Ratio (square) is best, but 2:1 (rectangle will work)
-# SVG: add css class "fill-current" to use theme colors, e.g.:
-# <svg class="fill-current"
 logo = "<svg class=\"fill-current\" viewBox=\"0 0 32 32\"><path d=\"M16,25 L32,25 L32,7 L28,7 L28,21 L26,21 L26,13 L22,13 L22,21 L18,21 L18,7 L16,7 L7,7 L7,11 L14,11 L14,21 L0,21 L0,25 L16,25 Z\"/></svg>"
 
 [outputs]
