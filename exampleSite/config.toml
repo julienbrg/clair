@@ -28,6 +28,7 @@ analyticsId = "UA-DEV"
 adwordsId = "AW-DEV"
 adsenseId = "CA-PUB-DEV"
 adsenseAdSlotId = "ID-DEV"
+adsenseLazy = false
 adwordsConversionId = "ID-DEV"
 adwordsConversionValue = 0
 facebookApp = "FB-DEV"
