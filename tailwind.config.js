@@ -28,24 +28,25 @@ module.exports = {
         'content-title': ['font-content-title', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
-        smp: '0.9375rem',
-        '2xlp': '1.625rem',
-        '4xlp': '2.5rem',
+        '2xs': '0.8125rem', // 13px
+        '2sm': '0.9375rem', // 15px
+        '2xlp': '1.625rem', // 26px
+        '4xlp': '2.5rem', // 40px
       },
       letterSpacing: {
         'default': 'normal',
         'tightly': '-0.015em',
       },
       lineHeight: {
-        'tightly': '1.15',
+        'tightly': '1.15', //  18.4
       },
       maxWidth: {
-        '2xlp': '42.5rem',
+        '2xlp': '42.5rem', // 680
       },
       spacing: {
-        '05': '0.1875rem',
-        '9': '2.25rem',
-        '14': '3.5rem',
+        '05': '0.1875rem', // 3px
+        '9': '2.25rem', // 40px
+        '14': '3.5rem', // 56px
       },
     },
   },
