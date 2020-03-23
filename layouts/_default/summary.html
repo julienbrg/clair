@@ -4,7 +4,7 @@
   {{- $imgSrc := partial "cdn-src" (dict "Site" $.Site "Page" . "src" $src "preset" "summary") }}
   <div class="sm:flex-shrink-0 mb-4 sm:mb-0 sm:mr-10">
     <a class="block" href="{{ .RelPermalink }}"><img
-    class="sm:w-40 sm:h-40 object-cover"
+    class="sm:w-40 sm:h-40 mx-auto object-cover"
     src="{{ $imgSrc }}"
     alt="{{ .Title }}"></a>
   </div>
@@ -20,6 +20,6 @@
       {{- end }}
       {{- $subtitle | truncate 125 " ..." -}}
     </a>
-    <aside class="mt-6 text-smp leading-snug tracking-normal font-normal text-raven-500"><time datetime="{{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }}">{{ dateFormat "Jan 2, 2006" .Date.UTC }}</time></aside>
+    <aside class="mt-6 text-2sm leading-snug tracking-normal font-normal text-raven-500"><time datetime="{{ dateFormat "2006-01-02T15:04:05Z" .Date.UTC | safeHTML }}">{{ dateFormat "Jan 2, 2006" .Date.UTC }}</time></aside>
   </div>
 </div>
