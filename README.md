@@ -174,6 +174,9 @@ adwordsId = "AW-DEV"
 adsenseId = "CA-PUB-DEV"
 # Google Adsense Ad Slot Id, for ad unit shown below Posts
 adsenseAdSlotId = "ID-DEV"
+# Google Adsense Lazy Load
+# DEFAULT: false
+adsenseLazy = false
 # Google Adwords Conversion Id
 adwordsConversionId = "ID-DEV"
 # Google Adwords Conversion value
@@ -281,7 +284,7 @@ The Font section controls if the  _Type CSS_ (`/assets/type.css`) stylesheet is 
 type = "font/woff"
 # List of font files from 'type.css' to preload. Setting to empty, disables Type CSS
 # DEFAULT: []
-files = ["title-400-font.woff", "sans-400-font.woff", "serif-italic-400-font.woff", ...etc]
+  files = ["title-400-font.woff", "sans-400-font.woff", "serif-italic-400-font.woff"]
 ```
 
 If the `files` array is populated, Axiom will preload the list of font files, and link the Type CSS stylesheet in the website's `<head>` section. You'll need to have the font files either stored locally in an `example.com/static/font/` directory or hosted on a CDN supported by Axiom.
