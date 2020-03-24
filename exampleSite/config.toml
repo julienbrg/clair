@@ -72,19 +72,22 @@ files = []
 [params.brand]
 domain = "example.com"
 email = "info@example.com"
-github = "example"
-facebook = "example"
-twitter = "example"
-instagram = "example"
-youtube = "example"
-pinterest = "example"
-linkedin = "example"
-stacko = "10101010"
 faviconIco = "favicon.ico"
 faviconAlt = "favicon.png"
 icon1To1 = "icon-1-1.png"
 icon2To1 = "icon-2-1.png"
 logo = "<svg class=\"fill-current\" viewBox=\"0 0 32 32\"><path d=\"M16,25 L32,25 L32,7 L28,7 L28,21 L26,21 L26,13 L22,13 L22,21 L18,21 L18,7 L16,7 L7,7 L7,11 L14,11 L14,21 L0,21 L0,25 L16,25 Z\"/></svg>"
+
+[params.social]
+facebook = "https://www.facebook.com/user_or_page"
+github = "https://github.com/user"
+instagram = "https://instagram.com/user"
+linkedin = "https://www.linkedin.com/in/user"
+pinterest = "https://www.pinterest.com/user"
+stackoverflow = "https://stackoverflow.com/users/user"
+twitter = "https://twitter.com/user"
+youtube = "https://www.youtube.com/user"
+footer = ["twitter", "github", "instagram"]
 
 [outputs]
 home = ["HTML", "ATOM"]
