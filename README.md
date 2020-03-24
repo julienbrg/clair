@@ -284,7 +284,7 @@ logo = "svginline"
 
 Further detail on some of the options in the Images section:
 
-``default`: Choose a default image that represents the overall theme of the brand or website. This will be used for Structured Data and Open-Graph for Pages/Posts without a Feature image. It should be size to match the settings entered for `width` and `height`.
+`default`: Choose a default image that represents the overall theme of the brand or website. This will be used for Structured Data and Open-Graph for Pages/Posts without a Feature image. It should be size to match the settings entered for `width` and `height`.
 
 `logo`: The logo option has two formats:
 
