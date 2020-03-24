@@ -67,7 +67,7 @@ This creates a fully functioning Hugo website that can be deployed as is from th
 # Setup
 ## Config File
 
-The Axiom `exampleSite` _Config_ file ([`config.toml`](https://github.com/jhauraw/axiom/blob/master/exampleSite/config.toml)) provides a starting point for theme customization and setup.
+The Axiom Hugo `exampleSite` _Config_ file ([`config.toml`](https://github.com/jhauraw/axiom/blob/master/exampleSite/config.toml)) provides a starting point for theme customization and setup.
 
 Copy `config.toml` into the root directory of your website:
 
@@ -248,7 +248,7 @@ files = ["title-400-font.woff", "sans-400-font.woff", "serif-italic-400-font.wof
 
 If you have many font files added in the Type CSS file, you don't have to preload all of them. You can list a subset of the most important ones in the Config, and let the others load normally. As long as at least one font file is in the `files` array, the Type CSS features will be enabled.
 
-An Example [Type CSS file](/exampleSite/assets/EXAMPLE-TYPE.css) is included in the Example Site assets directory.
+An Example Type CSS file ([EXAMPLE-TYPE.css](https://github.com/jhauraw/axiom/blob/master/exampleSite/assets/EXAMPLE-TYPE.css)) is included in the Example Site assets directory.
 
 > Note: In `type.css` begin each URL with the `{{ .host }}` variable so that proper paths/URLs are substituted on build.
 
@@ -292,7 +292,7 @@ Further detail on some of the options in the Images section:
 
 1. SVG inline: Entering the keyword `svginline` will source the contents of an SVG file and inline the code between the anchor element (`<a>`). This option has advangtages because it allows you to manipulate the SVG with styles, such as changing the color or adding a hover effect. Also, it reduces http requests by one.
 
-To use the `svginline` option you need to paste your SVG logo code into the snippet file located at `/content/logo-svg/index.html`. Be careful not to remove the YAML front matter section of the file contents. You can add your own CSS to the SVG tag or use SVG fills and strokes. Take a look at the Example website implementation.
+To use the `svginline` option you need to paste your SVG logo code into the snippet file located at [/exampleSite/content/logo-svg/](https://github.com/jhauraw/axiom/blob/master/exampleSite/content/logo-svg/index.html). Be careful not to remove the YAML front matter section of the file contents. You can add your own CSS to the SVG tag or use SVG fills and strokes.
 
 ## CDNs
 
@@ -464,7 +464,7 @@ With citations:
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 ```
 
-For citations to work, Hugo _Config_ file (`config.toml`) needs the Goldmark Renderer setting `unsafe = true`. This is not specific to this theme, but part of how Hugo treats HTML in Markdown content:
+For citations to work, the Config file needs the Goldmark Renderer setting `unsafe = true`. This is not specific to this theme, but part of how Hugo treats HTML in Markdown content:
 
 ```toml
 [markup]
@@ -517,7 +517,7 @@ TODO.
 # Ads
 ## Google Adsense
 
-Axiom is ready for Ads if you choose to serve them. There is a single responsive Ad Slot at the bottom of the Post content. If you set an Adsense Id in the _Services_ Config (`params.services` `adsenseId`), Ads will be activated, otherwise all Ads related javascript and code will not be output. Be sure to also set your `adsenseAdSlotId`
+Axiom is ready for Ads if you choose to serve them. There is a single responsive Ad Slot at the bottom of the Post content. If you set an Adsense Id in the _Services_ Config (`params.services` `adsenseId`), Ads will be activated, otherwise all Ads related javascript and code will not be output. Be sure to also set your `adsenseAdSlotId`.
 
 Setting the `adsenseLazy` to true will delay the loading of the javascript slightly to enhance page speed.
 
