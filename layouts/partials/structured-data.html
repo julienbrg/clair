@@ -1,11 +1,8 @@
-{{- $imgFeature := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature "preset" "feature") -}}
-
-{{- $imgMeta := partial "cdn-src" (dict "Site" $.Site "Page" . "src" (.Params.feature | default .Site.Params.img.default)) -}}
-
-{{- $imgBrand := printf "%s%s" .Site.Params.path.brand .Site.Params.brand.icon1To1 -}}
-{{- $imgBrand = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgBrand) -}}
+{{- $imgMeta := partial "cdn-src" (dict "Site" $.Site "Page" . "src" (.Params.feature | default .Site.Params.image.default)) -}}
+{{- $imgBrand := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Site.Params.image.icon1To1) -}}
 
 {{- if .Params.feature }}
+{{- $imgFeature := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature "preset" "feature") -}}
 <link rel="preload" as="image" href="{{ $imgFeature }}">
 {{ end }}
 
@@ -34,8 +31,8 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <link rel="image_src" href="{{ $imgMeta | absURL }}">
 <meta property="og:image" content="{{ $imgMeta | absURL }}">
-<meta property="og:image:width" content="{{ .Site.Params.img.width }}">
-<meta property="og:image:height" content="{{ .Site.Params.img.height }}">
+<meta property="og:image:width" content="{{ .Site.Params.image.width }}">
+<meta property="og:image:height" content="{{ .Site.Params.image.height }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" | default "en_US" }}">
 <meta property="og:description" content="{{ $description | plainify }}">

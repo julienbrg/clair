@@ -17,15 +17,11 @@
   {{- with .Site.Copyright }}
   <rights>{{ . }}</rights>
   {{- end }}
-  {{- with .Site.Params.brand.icon1To1 }}
-  {{- $icon1To1 := printf "%s%s" $.Site.Params.path.brand . }}
-  {{- $icon1To1 = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $icon1To1) }}
-  <icon>{{ $icon1To1 | absURL }}</icon>
+  {{- with .Site.Params.image.icon1To1 }}
+  <icon>{{ partial "cdn-src" (dict "Site" $.Site "Page" . "src" .) | absURL }}</icon>
   {{- end }}
-  {{- with .Site.Params.brand.icon2To1 }}
-  {{- $icon2To1 := printf "%s%s" $.Site.Params.path.brand . }}
-  {{- $icon2To1 = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $icon2To1) }}
-  <logo>{{ $icon2To1 | absURL }}</logo>
+  {{- with .Site.Params.image.icon2To1 }}
+  <logo>{{ partial "cdn-src" (dict "Site" $.Site "Page" . "src" .) | absURL }}</logo>
   {{- end }}
   <updated>{{ dateFormat "2006-01-02T15:04:05Z" now.UTC | safeHTML }}</updated>
   {{- with .OutputFormats.Get "ATOM" }}

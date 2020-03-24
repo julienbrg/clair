@@ -3,11 +3,11 @@ name = "Default Author"
 uri = "https://example.com/"
 email = "info@example.com"
 twitter = "example"
-image = "default.webp"
+image = "image/author/default.webp"
 
 ["Hugo Authors"]
 name = "Hugo Authors"
 uri = "https://example.com/"
 email = "info@example.com"
 twitter = "example"
-image = "default.webp"
+image = "image/author/default.webp"

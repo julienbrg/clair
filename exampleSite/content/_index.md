@@ -1,6 +1,6 @@
 +++
 author = "Hugo Authors"
-feature = "page-default.webp"
+feature = "image/page-default.webp"
 caption = "Lorem est tota propiore conpellat pectoribus de."
 +++
 

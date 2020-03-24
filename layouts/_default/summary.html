@@ -1,7 +1,6 @@
 <div class="sm:flex">
   {{- if .Params.feature }}
-  {{- $src := printf "%s%s" .Site.Params.path.image .Params.feature -}}
-  {{- $imgSrc := partial "cdn-src" (dict "Site" $.Site "Page" . "src" $src "preset" "summary") }}
+  {{- $imgSrc := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Params.feature "preset" "summary") }}
   <div class="sm:flex-shrink-0 mb-4 sm:mb-0 sm:mr-10">
     <a class="block" href="{{ .RelPermalink }}"><img
     class="sm:w-40 sm:h-40 mx-auto object-cover"

@@ -1,7 +1,0 @@
-{{/*
-  Example usage:
-  {{< cdn-link-image src="image.jpg" >}}
-  {{< cdn-link-image src="image.jpg" preset="page" >}}
-*/}}
-{{- $src := printf "%s%s" .Site.Params.path.image (.Get "src") -}}
-{{- partial "cdn-src" (dict "Site" $.Site "Page" . "src" $src "preset" (.Get "preset") "type" "image") }}

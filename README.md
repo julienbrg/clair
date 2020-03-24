@@ -2,7 +2,7 @@
 
 Axiom is designed to make the readers of your content and the search engines happy. A typical "Article" with Adsense ads, web fonts, syntax highlighting, and large Hero image has a __Mobile PageSpeed__ of __95__ running on the lowest tier cloud server plan.
 
-SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Serverless CDN support (Netlify), Asset CDN support (Cloudinary) with image transformations for responsive images, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Config includes isolated `development` and `production` environments so tracker's like Analytics don't fire false positives. Built with Tailwind CSS, Alpine JS (not used but included), and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
+SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Serverless CDN support (Netlify), Asset CDN support (Cloudinary) with image transformations for responsive images, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Config includes isolated `development` and `production` environments so tracker's like Analytics don't fire false positives. Built with Tailwind CSS, Alpine JS, and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
 
 # Support / Questions
 
@@ -51,7 +51,7 @@ Install Axiom as a Git clone:
 example.com % git clone --recurse-submodules https://github.com/jhauraw/axiom.git themes/axiom
 ```
 
-> Optionally, remove the .git directory. To update the theme in the future, you'll need to delete the theme and re-clone it, per above.
+> Optionally, remove the .git directory. To update the theme in the future, you'll need to delete the theme and re-clone it.
 
 # Example Website
 ## Quick Start
@@ -95,7 +95,6 @@ baseURL = "https://example.com"
 
 # Change to your Brand or Website Title
 title = "Axiom A Hugo Theme"
-
 # Default language
 # NOTE: lowercase
 # ALERT: If you change these you must add a language in the Config [languages] table, and an i18n language file
@@ -107,23 +106,17 @@ theme = "axiom"
 
 # Canonify relative URLs using baseURL
 canonifyURLs = false
-
 # Max posts to show in atom feed
 rssLimit = 100
-
 # Enable Emoji's in posts
 enableEmoji = true
-
 # Length of snippet on post index and structured data
 summaryLength = 40
-
 # Output a robots.txt file
 # NOTE: See the 'Frontmatter' section below
 enableRobotsTXT = true
-
 # Don't automatically mangle titles
 pluralizelisttitles = false
-
 # Broken in Hugo currently
 footnoteReturnLinkContents = "&#8617;"
 
@@ -160,6 +153,41 @@ copyrightYear = 2000
 
 There are many more Param options that can be added to suit your needs. See the Hugo Configuration Documentation for more information.
 
+## Branding
+
+Config options related to your brand or website:
+
+```toml
+[params.brand]
+# Just domain name, no www
+domain = "example.com"
+# Contact email address
+email = "info@example.com"
+```
+
+Mainly used for Contact options.
+
+### Social
+
+Settings relating to social networks:
+
+```toml
+[params.social]
+facebook = "https://www.facebook.com/user_or_page"
+github = "https://github.com/user"
+instagram = "https://instagram.com/user"
+linkedin = "https://www.linkedin.com/in/user"
+pinterest = "https://www.pinterest.com/user"
+stackoverflow = "https://stackoverflow.com/users/user"
+twitter = "https://twitter.com/user"
+youtube = "https://www.youtube.com/user"
+
+# Show these linked icons in the footer
+footer = ["twitter", "github", "instagram"]
+```
+
+The `footer` option allows you to show specific social network icons with links in the footer of the website. Each entry must match one of the network names defined.
+
 ## Services
 
 Options for third party services, such as analytics, tracking, ads, and APIs:
@@ -192,25 +220,79 @@ disqusUser = "na"
 
 Services will continue to be added and improved.
 
-## Paths
+## Fonts
 
-Axiom builds all the file paths for you behind the scenes. This means that when setting a Feature image in a Page or Post, you need only set the `filename.ext` or `public_id` (uuid). The paths set below will then be applied to the asset. The EXCEPTION to this rule is when using vanilla Markdown or non-Axiom shortcodes to insert assets. Axiom cannot get in the middle of that process to build up the path. In such cases, just prepend the same relative path values set here:
+See the _Typography_ section below for more details.
+
+The Font section controls if the  _Type CSS_ (`/assets/type.css`) stylesheet is used, and if font files are preloaded:
 
 ```toml
-# Folders where assets are stored, applies to both local and CDNs
-# NOTE: trailing slash
-[params.path]
-image = "image/"
-video = "video/"
-author = "image/author/"
-brand = "image/brand/"
-font = "font/"
-pdf = "pdf/"
+[params.font]
+# MIME type of font files, e.g., "font/woff"
+type = ""
+# Path to font files, e.g., "font/"
+path = ""
+# List of font files from 'type.css' to preload. Setting to empty, disables Type CSS
+files = []
 ```
 
-Local storage of assets refers to the Hugo website _Static_ directory (`/static/`), and the paths above would be directories nested inside Static.
+If the `files` array is populated, Axiom will preload the list of font files, and link the Type CSS stylesheet in the website's `<head>` section. You'll need to have the font files either stored locally in an `example.com/static/font/` directory or hosted on a CDN supported by Axiom. You can set the directory where the font files are located with the `path` option.
 
-For CDNs, it's typical to set the `image` path to `""` and remove it from the `author` and `brand` paths. The CDN storage bucket acts as a surrogate for the `image/` path.
+Example settings to load fonts:
+
+```toml
+type = "font/woff"
+path = "font/"
+files = ["title-400-font.woff", "sans-400-font.woff", "serif-italic-400-font.woff"]
+```
+
+If you have many font files added in the Type CSS file, you don't have to preload all of them. You can list a subset of the most important ones in the Config, and let the others load normally. As long as at least one font file is in the `files` array, the Type CSS features will be enabled.
+
+An Example [Type CSS file](/exampleSite/assets/EXAMPLE-TYPE.css) is included in the Example Site assets directory.
+
+> Note: In `type.css` begin each URL with the `{{ .host }}` variable so that proper paths/URLs are substituted on build.
+
+If the `files` array is empty, Axiom will use the Tailwind CSS font-family fallback settings. Either way, the display will look very similar, unless your eye is trained to typography.
+
+If you're not using the Type CSS features, you can delete the corresponding files in the _Assets_ directory (`/assets/type.css` and `/assets/EXAMPLE-TYPE.css`) to prevent Hugo from copying empty files on build.
+
+## Images
+
+Image config options set defaults used in meta tags and fallbacks:
+
+```toml
+[params.image]
+# Dimensions of the 'Feature' image
+width = "2048"
+height = "1024"
+# Default 'Feature' image
+default = "image/page-default.webp"
+# Favicons
+# Suggest to store .ico at root of site (/static/) or CDN
+faviconIco = "favicon.ico"
+faviconAlt = "image/brand/favicon.png"
+# High-res square version of your Icon or Logo
+# RECOMMENDED: 2048x2048 pixels
+icon1To1 = "image/brand/icon-1-1.png"
+# High-res rectangular version of your Icon or Logo
+# RECOMMENDED: 2048x1024 pixels
+icon2To1 = "image/brand/icon-2-1.png"
+# Main Logo shown in header
+# VALUES: svginline, file.ext, path/file.ext
+logo = "svginline"
+```
+
+Further detail on some of the options in the Images section:
+
+``default`: Choose a default image that represents the overall theme of the brand or website. This will be used for Structured Data and Open-Graph for Pages/Posts without a Feature image. It should be size to match the settings entered for `width` and `height`.
+
+`logo`: The logo option has two formats:
+
+1. IMG tag: Entering a filename or path plus filename will create an image element (`<img>`) and source the asset entered. For example: `logo = "logo.png"` or `logo = brand/logo.svg`.
+
+1. SVG inline: Entering the keyword `svginline` will source the contents of an SVG file and inline the code between the anchor element (`<a>`). This option has advangtages because it allows you to manipulate the SVG with styles, such as changing the color or adding a hover effect. Also, it reduces http requests by one.
+
+To use the `svginline` option you need to paste your SVG logo code into the snippet file located at `/content/logo-svg/index.html`. Be careful not to remove the YAML front matter section of the file contents. You can add your own CSS to the SVG tag or use SVG fills and strokes. Take a look at the Example website implementation.
 
 ## CDNs
 
@@ -255,83 +337,6 @@ summary = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
 When `provider` is set to one of the supported CDN values, all paths will be output as absolute URLs. The URL structure will be assembled based on each CDN's design. See the `/axiom/layouts/partials/cdn-src.html` file for details.
 
 > Alert: All config paths/URLs must end with a trailing slash `/`!
-
-## Images
-
-Image config options set defaults used in meta tags and fallbacks:
-
-```toml
-[params.img]
-# Dimensions of 'Feature' image
-width = "2048"
-height = "1024"
-# Default 'Feature' image name, used for Structured Data and Open-Graph for Pages/Posts without a Feature
-default = "page-default.webp"
-```
-
-Choose a default image that represents the overall theme of the brand or website.
-
-## Fonts
-
-See the _Typography_ section below for more details.
-
-The Font section controls if the  _Type CSS_ (`/assets/type.css`) stylesheet is used, and if font files are preloaded:
-
-```toml
-[params.font]
-# Font files MIME type
-# DEFAULT: ""
-type = "font/woff"
-# List of font files from 'type.css' to preload. Setting to empty, disables Type CSS
-# DEFAULT: []
-  files = ["title-400-font.woff", "sans-400-font.woff", "serif-italic-400-font.woff"]
-```
-
-If the `files` array is populated, Axiom will preload the list of font files, and link the Type CSS stylesheet in the website's `<head>` section. You'll need to have the font files either stored locally in an `example.com/static/font/` directory or hosted on a CDN supported by Axiom.
-
-If you have many font files added in the Type CSS file, you don't have to preload them all. You can list a subset of the most important ones in the Config, and let the others load normally. As long as at least one font file is in the `files` array, the Type CSS features will be enabled.
-
-An Example [Type CSS file](/exampleSite/assets/EXAMPLE-TYPE.css) is included in the Example Site assets directory.
-
-> Note: Begin each URL with the `{{ .host }}` variable so that proper paths/URLs are substituted on build.
-
-If the `files` array is empty, Axiom will use the Tailwind CSS font-family fallback settings. Either way, the display will look very similar, unless your eye is trained to typography.
-
-If you're not using the Type CSS features, you can delete the corresponding files in the _Assets_ directory (`/assets/type.css` and `/assets/EXAMPLE-TYPE.css`) to prevent Hugo from copying empty files on build.
-
-## Branding
-
-Config options related to your brand or website:
-
-```toml
-[params.brand]
-domain = "example.com"
-email = "info@example.com"
-github = "example"
-facebook = "example"
-twitter = "example"
-instagram = "example"
-youtube = "example"
-pinterest = "example"
-linkedin = "example"
-# Stack Overflow Id
-stacko = "10101010"
-# Favicons. Store .ico at root of site (/static/) or CDN, and .png in params.path.brand location
-faviconIco = "favicon.ico"
-faviconAlt = "favicon.png"
-# High-res square version of your Icon or Logo
-# RECOMMENDED: 2048x2048 pixels
-icon1To1 = "icon-1-1.png"
-# High-res rectangular version of your Icon or Logo
-# RECOMMENDED: 2048x1024 pixels
-icon2To1 = "icon-2-1.png"
-# SVG or IMG. 1:1 Ratio (square) is best, but 2:1 (rectangle will work)
-# SVG: add css class "fill-current" to use theme colors, e.g.: <svg class="fill-current"
-# VALUE: full SVG or IMG element
-logo = "<svg class=\"fill-current\" viewBox=\"0 0 32 32\"><path d=\"M16,25 L32,25 L32,7 L28,7 L28,21 L26,21 L26,13 L22,13 L22,21 L18,21 L18,7 L16,7 L7,7 L7,11 L14,11 L14,21 L0,21 L0,25 L16,25 Z\"/></svg>"
-```
-
-> Remember to place all Brand image assets at the location set in the `params.path` `brand` variable.
 
 ## Menus
 
@@ -385,7 +390,7 @@ __Feature__: Optional. Add a featured image to the Index, Page, or Post:
 
 ```toml
 +++
-feature = "filename.ext"
+feature = "path/filename.ext"
 # Optional 'Caption'
 caption = "Caption text (will also be used for alt)."
 
@@ -426,6 +431,11 @@ summary = "Summary, and meta description. Optional, automatically generated if n
 ```
 
 SEO potential, write something relevant.
+
+# Shortcodes
+## Enhance Content
+
+TODO.
 
 # Archetypes
 ## Generators
@@ -476,7 +486,7 @@ If you prefer not to turn on this setting, there is a `blockquote` shortcode pro
 # Figures
 ## Image Component
 
-Axiom comes with a custom Figure shortcode which uses the same API as the built in Hugo shortcode, but has been enhanced to support CDN images with transformations. You only need to pass it the image name (e.g., `filename.ext`, `public_id` [uuid]) with or without extension and Axiom will do the rest - no need to copy/paste complicated URLs in your Markdown files.
+Axiom comes with a custom Figure shortcode which uses the same API as the built in Hugo shortcode, but has been enhanced to support CDN images with transformations. You only need to pass it the image name (e.g., `path/filename.ext`, `public_id` [uuid]) with or without extension and Axiom will do the rest - no need to copy/paste complicated URLs in your Markdown files.
 
 See the Hugo Figure Shortcode Documentation for all of the options.
 
@@ -495,7 +505,9 @@ See the Hugo Data File Documentation for more information.
 # Sharing
 ## Social Media
 
-TODO.
+Axiom is configured to allow users to share your content via Facebook and Twitter. The implementation uses non-javascript library techniques, so your website speed won't be slowed down.
+
+For Twitter sharing, set the Author's Twitter username in the Author's Data file. For Facebook sharing, set the website's Facebook App Id in the `params.services` section `facebookApp` option.
 
 # Comments
 ## Disqus
@@ -505,7 +517,9 @@ TODO.
 # Ads
 ## Google Adsense
 
-Axiom is ready for Ads if you choose to serve them. There is a single responsive Ad Slot at the bottom of the Post content. If you set an Adsense Id in the _Services_ Config (`params.services` `adsenseId`), Ads will be activated, otherwise all Ads related javascript and code will not be output.
+Axiom is ready for Ads if you choose to serve them. There is a single responsive Ad Slot at the bottom of the Post content. If you set an Adsense Id in the _Services_ Config (`params.services` `adsenseId`), Ads will be activated, otherwise all Ads related javascript and code will not be output. Be sure to also set your `adsenseAdSlotId`
+
+Setting the `adsenseLazy` to true will delay the loading of the javascript slightly to enhance page speed.
 
 # Customization
 ## CSS and JS

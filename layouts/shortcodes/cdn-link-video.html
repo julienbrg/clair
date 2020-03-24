@@ -1,7 +1,0 @@
-{{/*
-  Example usage:
-  {{< cdn-link-video src="video.mp4" >}}
-  {{< cdn-link-video src="video.mp4" preset="video" >}}
-*/}}
-{{- $src := printf "%s%s" .Site.Params.path.video (.Get "src") -}}
-{{- partial "cdn-src" (dict "Site" $.Site "Page" . "src" $src "preset" (.Get "preset") "type" "video") }}
