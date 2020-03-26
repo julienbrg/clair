@@ -1,9 +1,8 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
-feature: "filename_or_public_id"
-caption: "Caption and Alt. This variant used on regular pages, NOT posts pages."
-summary: |
-  Summary, and meta description. Optional, automatically generated if not provided.
+subtitle: "25 words / 125 chars. Used in listing pages for excerpt and meta data."
+feature: "path_plus_filename_or_public_id"
+caption: "Feature image caption and image alt text."
 ---
 
 And go...
