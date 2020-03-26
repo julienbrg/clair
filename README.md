@@ -2,11 +2,11 @@
 
 Axiom is designed to make the readers of your content and the search engines happy. A typical "Article" with Adsense ads, web fonts, syntax highlighting, and large Hero image has a __Mobile PageSpeed__ of __95__ running on the lowest tier cloud server plan.
 
-SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Serverless CDN support (Netlify), Asset CDN support (Cloudinary) with image transformations for responsive images, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Config includes isolated `development` and `production` environments so tracker's like Analytics don't fire false positives. Built with Tailwind CSS, Alpine JS, and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
+SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Serverless CDN support (Netlify), Asset CDN support (Cloudinary) with image transformations for responsive images, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Built with Tailwind CSS, Alpine JS, and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
 
 # Support / Questions
 
-Please refer to the official [Hugo Documentation](https://gohugo.io/documentation/) and the [Hugo Community Discourse](https://discourse.gohugo.io/) to find answers and solutions. If you need help with something Axiom specific, please ask your question via Twitter, Stack Overflow, or - as a last resort - email. For a full list of options, visit our [Contact](https://www.jhaurawachsman.com/contact/) page. Please don't open a Github Issue unless it is related to specific code within Axiom. Hugo error messages generally are due to improper settings in the Config file added after installation.
+Please refer to the official [Hugo Documentation](https://gohugo.io/documentation/) and the [Hugo Community Discourse](https://discourse.gohugo.io/) to find answers and solutions. If you need help with something Axiom specific, please ask your question via Twitter, Stack Overflow, or - as a last resort - email. For a full list of options, visit our [Contact](https://www.jhaurawachsman.com/contact/) page. __Please DO NOT open a Github Issue unless it is related to Axiom specific code__. Hugo error messages generally are due to improper settings in the Config file added after installation.
 
 # Installation
 ## Existing Website
@@ -16,19 +16,19 @@ The instructions below, assume an existing Hugo website `example.com` in a worki
 > When typing/copying the terminal commands below, don't include the prompt portion: `~ %`
 
 ```shell
-~ % cd ~/sites/example.com/
-
-# Only if not already a git repository
-example.com % git init
+~ % cd ~/sites/example.com
 ```
 
-You can wait to do your initial commit until after adding the theme below.
+If you don't yet have a website, see the "Example Website" -> "Quick Start" section below.
 
 ## Via Submodule
 
 Install Axiom as a Git Submodule:
 
 ```shell
+# Only if not already a git repository
+example.com % git init
+
 # Add submodule to the 'themes' directory
 example.com % git submodule add https://github.com/jhauraw/axiom.git themes/axiom
 example.com % git submodule init
@@ -51,7 +51,9 @@ Install Axiom as a Git clone:
 example.com % git clone --recurse-submodules https://github.com/jhauraw/axiom.git themes/axiom
 ```
 
-> Optionally, remove the .git directory. To update the theme in the future, you'll need to delete the theme and re-clone it.
+Optionally, remove the .git directory.
+
+To update the theme in the future, you'll need to delete the theme and re-clone it.
 
 # Example Website
 ## Quick Start
@@ -88,20 +90,17 @@ Options to customize Axiom, starting from the top of the Config file. Most of th
 Options related to Hugo's Core build settings:
 
 ```toml
-# Change to your website's URL
+# Change to your website's URL (NO trailing slash)
 # For local dev, change to: http://localhost:1313
-# NOTE: NO trailing slash
 baseURL = "https://example.com"
 
 # Change to your Brand or Website Title
 title = "Axiom A Hugo Theme"
-# Default language
-# NOTE: lowercase
-# ALERT: If you change these you must add a language in the Config [languages] table, and an i18n language file
+# Language codes (lowercase)
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 
-# Which theme to use. Hugo allows multiple themes to be installed
+# Which theme to use
 theme = "axiom"
 
 # Canonify relative URLs using baseURL
@@ -112,17 +111,18 @@ rssLimit = 100
 enableEmoji = true
 # Length of snippet on post index and structured data
 summaryLength = 40
-# Output a robots.txt file
-# NOTE: See the 'Frontmatter' section below
+# Output a robots.txt file (see the 'Frontmatter' section below)
 enableRobotsTXT = true
 # Don't automatically mangle titles
 pluralizelisttitles = false
-# Broken in Hugo currently
+# Footnote entity (broken in Hugo currently)
 footnoteReturnLinkContents = "&#8617;"
 
-# Don't output tags or categories. Remove to re-enable
+# Don't output tags or categories (remove to re-enable)
 disableKinds = ["taxonomy", "taxonomyTerm"]
 ```
+
+> If you change the `defaultContentLanguage` you must add the new language in the Config `[languages]` table, and an i18n language file in `/i18n/lang-code.toml`.
 
 There are many more Core options that can be added to suit your needs. See the Hugo Configuration Documentation for more information.
 
@@ -146,8 +146,7 @@ Options related to Hugo's Param settings:
 # Sections to include in lists and indexes
 mainSections = ["post"]
 
-# Footer copyright start year, prepended to current year
-# E.g.: 2000-2020
+# Footer copyright start year, prepended to current year, e.g., 2000-2020
 copyrightYear = 2000
 ```
 
@@ -167,7 +166,7 @@ email = "info@example.com"
 
 Mainly used for Contact options.
 
-### Social
+## Social
 
 Settings relating to social networks:
 
@@ -203,12 +202,10 @@ adsenseId = "CA-PUB-DEV"
 # Google Adsense Ad Slot Id, for ad unit shown below Posts
 adsenseAdSlotId = "ID-DEV"
 # Google Adsense Lazy Load
-# DEFAULT: false
 adsenseLazy = false
 # Google Adwords Conversion Id
 adwordsConversionId = "ID-DEV"
-# Google Adwords Conversion value
-# INTEGER (no quotes): 00.00
+# Google Adwords Conversion value (integer, no quotes, 00.00)
 adwordsConversionValue = 0
 # Facebook App Id
 facebookApp = "FB-DEV"
@@ -218,21 +215,19 @@ facebookPixel = "FB-DEV"
 disqusUser = "na"
 ```
 
-Services will continue to be added and improved.
+> Tip: create a `config.dev.toml` file with test values for each service to prevent false positives on trackers.
 
 ## Fonts
-
-See the _Typography_ section below for more details.
 
 The Font section controls if the  _Type CSS_ (`/assets/type.css`) stylesheet is used, and if font files are preloaded:
 
 ```toml
 [params.font]
-# MIME type of font files, e.g., "font/woff"
+# MIME type of font files
 type = ""
-# Path to font files, e.g., "font/"
+# Path to font files
 path = ""
-# List of font files from 'type.css' to preload. Setting to empty, disables Type CSS
+# List of font files from 'type.css' to preload (setting to empty, disables)
 files = []
 ```
 
@@ -256,29 +251,27 @@ If the `files` array is empty, Axiom will use the Tailwind CSS font-family fallb
 
 If you're not using the Type CSS features, you can delete the corresponding files in the _Assets_ directory (`/assets/type.css` and `/assets/EXAMPLE-TYPE.css`) to prevent Hugo from copying empty files on build.
 
+See the _Typography_ section below for more details.
+
 ## Images
 
 Image config options set defaults used in meta tags and fallbacks:
 
 ```toml
 [params.image]
-# Dimensions of the 'Feature' image
+# Dimensions of the 'Feature' image (pixels)
 width = "2048"
 height = "1024"
 # Default 'Feature' image
 default = "image/page-default.webp"
-# Favicons
-# Suggest to store .ico at root of site (/static/) or CDN
+# Favicons (suggest to store .ico at root of website or CDN)
 faviconIco = "favicon.ico"
 faviconAlt = "image/brand/favicon.png"
-# High-res square version of your Icon or Logo
-# RECOMMENDED: 2048x2048 pixels
+# High-res square version of your Icon or Logo (recommended 2048x2048 px)
 icon1To1 = "image/brand/icon-1-1.png"
-# High-res rectangular version of your Icon or Logo
-# RECOMMENDED: 2048x1024 pixels
+# High-res rectangular version of your Icon or Logo (recommended 2048x1024 px)
 icon2To1 = "image/brand/icon-2-1.png"
-# Main Logo shown in header
-# VALUES: svginline, file.ext, path/file.ext
+# Main Logo shown in header (svginline, file.ext, path/file.ext)
 logo = "svginline"
 ```
 
@@ -300,24 +293,18 @@ Axiom is designed to be deployed using the latest technologies and best practice
 
 ```toml
 [params.cdn]
-# Asset delivery provider
-# VALUES: "local", "cloudinary"
-# DEFAULT: local
+# Asset delivery provider (values: local, cloudinary)
 provider = "local"
-# Asset types. Used for CDNs which give different URLs for each asset type
-# VALUES: image, video, raw
-# DEFAULT: image
+# Asset types. Used for CDNs which give different URLs for each asset type (image, video, raw)
 type = "image"
 
 # Cloudinary CDN
 [params.cloudinary]
-# Base URL for your account, replace CLOUD_NAME.
-# NOTE: trailing slash
+# Base URL for your account (replace CLOUD_NAME, note: add trailing slash)
 host = "https://res.cloudinary.com/CLOUD_NAME/"
 # URL versioning, e.g., "v12345/"
 version = ""
-# Cloudinary Internal paths
-# NOTE: DON'T EDIT!
+# Cloudinary Internal paths. DON'T EDIT!
 image = "image/upload/"
 raw = "raw/upload/"
 video = "video/upload/"
@@ -367,14 +354,13 @@ languageName = "US English"
 Refer to the Hugo Multilingual Documentation to learn how to add additional language support.
 
 # Theme Features
+## Content Delivery
 
-# CDNs
-## Serverless Edge Deploy, Assets, Image Transformations
+Out-of-the-box, Axiom is configured to support assets (images, pdfs, fonts, etc.) which are self-hosted or hosted on a content delivery network. Currently, Cloudinary is the only CDN implemented. Axiom is also designed to be deployed via CDN to the edge as a JamStack website, for example on Netlify.
 
-Out-of-the-box, Axiom is configured to support self-hosted assets (images, pdfs, fonts, etc.) or content delivery networks. Currently, Cloudinary is the only CDN implemented. Axiom is also designed to be deployed via CDN to the edge as a JamStack website, for example on Netlify.
+If you've configured Axiom to use a CDN in the _Config_ options above, assets will be served via the CDN.
 
-# Frontmatter
-## Content Enhancements
+## Frontmatter
 
 __Private__: Optional. Exclude a page or post from robots indexing, sitemaps, and feeds:
 
@@ -386,10 +372,11 @@ private = true
 
 Useful for pages such as 404, Privacy Policy, or Disclosures that you don't want indexed.
 
-__Feature__: Optional. Add a featured image to the Index, Page, or Post:
+__Feature__: Optional. Add a featured image to an Index, Section, Page, or Post:
 
 ```toml
 +++
+# Image name
 feature = "path/filename.ext"
 # Optional 'Caption'
 caption = "Caption text (will also be used for alt)."
@@ -399,13 +386,13 @@ feature = "5e39e315-c06c-4d81-9b4a-35fca661621c"
 +++
 ```
 
-> Remember to output the image and store it locally or on a CDN first.
+> Remember to output the image in the size set in the _Image_ Config (`params.image` `width` and `height`) option and store it locally or on a CDN.
 
 __Author__: Optional. Author of the content:
 
 ```toml
 +++
-# VALUE: Author Id
+# Author Id from /data/author.toml
 author = "default"
 +++
 ```
@@ -432,24 +419,57 @@ summary = "Summary, and meta description. Optional, automatically generated if n
 
 SEO potential, write something relevant.
 
-# Shortcodes
-## Enhance Content
+## Shortcodes
 
-TODO.
+__Figure__: Axiom comes with a custom Figure image shortcode which uses the same API as the built in Hugo shortcode, but has been enhanced to support CDN images and transformations. You only need to pass it the image name (e.g., `path/filename.ext`, `public_id` [uuid]) with or without extension and Axiom will do the rest - no need to copy/paste complicated URLs in your Markdown files.
 
-# Archetypes
-## Generators
+```markeup
+{{< figure src="image/data-chart.webp" alt="Data Chart" caption="Data Chart" attr="Big Data" attrlink="https://www.example.com/" >}}
+```
 
-TODO.
+See the Hugo Figure Shortcode Documentation for all of the options.
 
-# Markdown
-## Headings
+__Blockquote__: The first parameter is required, while the other two are optional:
 
-While headings in sizes H3-H6 are supported, they are styled to match H2. Anything smaller than H2 is smaller than a `<p>` and that doesn't look right.
+```markup
+# Definition
+{{< blockquote "Quote text" "Footer text" "Cite text" >}}
+
+# Example
+{{< blockquote "You can trade hours for dollars or ideas for millions." "Cactus Jack on" "The Shark Tank" >}}
+```
+
+> Tip: You can also use standard Markdown blockquote syntax as described below in the _Markdown_ section, if you prefer.
+
+## Archetypes
+
+__New Post__: Create a new entry in the "Post" section:
+
+```shell
+hugo new post/new-post.md
+```
+
+If you prefer the plural form of "Posts" there is also a generator for that variant:
+
+```shell
+hugo new posts/new-post.md
+```
+
+__New Page__: Create a new static page:
+
+```shell
+hugo new about.md
+```
+
+The Archetype generators don't include all of the _Frontmatter_ options. Refer to the _Frontmatter_ section above for more details.
+
+## Markdown
+
+__Headings__: While headings in sizes H3-H6 are supported, they are styled to match H2. Anything smaller than H2 is smaller than a `<p>` and that doesn't look right.
 
 The first H1 of an element with the `cdata` class (`class="cdata"`) is a special case and is considered the main heading or Title, and will be styled uniquely from the rest to make it standout.
 
-## Blockquotes
+__Blockquotes__:
 
 Quote only:
 
@@ -473,58 +493,46 @@ For citations to work, the Config file needs the Goldmark Renderer setting `unsa
 unsafe = true
 ```
 
-If you prefer not to turn on this setting, there is a `blockquote` shortcode provided, which offers a cleaner API. The first parameter is required, while the other two are optional:
+> Tip: You can also use the `blockquote` shortcode mentioned in the _Shortcodes_ section above, which offers a cleaner API.
 
-```markup
-# Definition
-{{< blockquote "Quote text" "Footer text" "Cite text" >}}
+Refer to the official [Markdown documentation](https://daringfireball.net/projects/markdown/syntax) for more details.
 
-# Example
-{{< blockquote "You can trade hours for dollars or ideas for millions." "Cactus Jack on" "The Shark Tank" >}}
-```
-
-# Figures
-## Image Component
-
-Axiom comes with a custom Figure shortcode which uses the same API as the built in Hugo shortcode, but has been enhanced to support CDN images with transformations. You only need to pass it the image name (e.g., `path/filename.ext`, `public_id` [uuid]) with or without extension and Axiom will do the rest - no need to copy/paste complicated URLs in your Markdown files.
-
-See the Hugo Figure Shortcode Documentation for all of the options.
-
-# Typography
-# Design and Style
+## Typography
 
 TODO.
 
-# Authors
-## Content Attribution
+## Authors
 
 Axiom supports multiple content authors for your Posts. You can set individual Author contact data and profile images. To configure Authors, edit the _Authors_ data file (`/data/author.toml`) and output and Author profile image locally or on a CDN. Recommended size is `256x256` pixels.
 
 See the Hugo Data File Documentation for more information.
 
-# Sharing
-## Social Media
+## Sharing
 
 Axiom is configured to allow users to share your content via Facebook and Twitter. The implementation uses non-javascript library techniques, so your website speed won't be slowed down.
 
-For Twitter sharing, set the Author's Twitter username in the Author's Data file. For Facebook sharing, set the website's Facebook App Id in the `params.services` section `facebookApp` option.
+For Twitter sharing, set the Author's Twitter username in the Author's Data file. For Facebook sharing, set the website's Facebook App Id in the _Services_ Config (`params.services` `facebookApp`) option.
 
-# Comments
-## Disqus
+## Comments
 
 TODO.
 
-# Ads
-## Google Adsense
+## ATOM Feed
 
-Axiom is ready for Ads if you choose to serve them. There is a single responsive Ad Slot at the bottom of the Post content. If you set an Adsense Id in the _Services_ Config (`params.services` `adsenseId`), Ads will be activated, otherwise all Ads related javascript and code will not be output. Be sure to also set your `adsenseAdSlotId`.
+Axiom uses an ATOM syndication feed format which includes full post content in each entry.
+
+If set in the _Image_ Config (`params.image` `icon1To1` and `icon2To1`), an icon and logo tag will be added to the feed template.
+
+## Services
+
+__Google Adsense__: Axiom is ready for Ads if you choose to serve them. There is a single responsive Ad Slot at the bottom of the Post content. If you set an Adsense Id in the _Services_ Config (`params.services` `adsenseId`), Ads will be activated, otherwise all Ads related javascript and code will not be output. Be sure to also set your `adsenseAdSlotId`.
 
 Setting the `adsenseLazy` to true will delay the loading of the javascript slightly to enhance page speed.
 
-# Customization
-## CSS and JS
+__Facebook__: If you set a Facebook Pixel Id in the _Services_ Config (`params.services` `facebookPixel`), the lightweight pixel tracker will be activated, otherwise all related javascript and code will not be output.
 
-Axiom is setup so you can use your own custom CSS and JS files. To take advantage of this feature, create the files in the _Assets_ directory (`/assets/`) and Axiom will do the rest, including preloading them for better performance. Name each file `custom.css` and `custom.js`.
+## Customization
+__CSS / JS__: Axiom is setup so you can use your own custom CSS and JS files. To take advantage of this feature, create the files in the _Assets_ directory (`/assets/`) and Axiom will do the rest, including preloading them for better performance. Name each file `custom.css` and `custom.js`.
 
 The Example site Assets directory contains a pair of empty custom CSS and JS files to get you started.
 
