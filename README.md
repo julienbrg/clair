@@ -2,24 +2,55 @@
 
 Axiom is designed to make the readers of your content and the search engines happy. A typical "Article" with Adsense ads, web fonts, syntax highlighting, and large Hero image has a __Mobile PageSpeed__ of __95__ running on the lowest tier cloud server plan.
 
-SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full `Schema.org Article` fieldset, Open-Graph tags, Serverless CDN support (Netlify), Asset CDN support (Cloudinary) with image transformations for responsive images, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Built with Tailwind CSS, Alpine JS, and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
+SEO and Social Media features include Article sharing via Facebook and Twitter (without heavy Javascript libraries), Google Structured Data `ld+json` with a full Schema.org `Article` fieldset, Open-Graph tags, Serverless CDN support (Netlify), Asset CDN support (Cloudinary) with image transformations for responsive images, ATOM feed Syndication XML format, asset preloading, third-party prefetching, SVG icons, syntax highlighting with Prism.js, custom 404 error page, custom CSS/JS support, and a full Multilingual implementation. Built with Tailwind CSS, Alpine JS, and an NPM Scripts (task-runner-free) build process, the Axiom Hugo theme is feature packed.
 
 # Support / Questions
 
 Please refer to the official [Hugo Documentation](https://gohugo.io/documentation/) and the [Hugo Community Discourse](https://discourse.gohugo.io/) to find answers and solutions. If you need help with something Axiom specific, please ask your question via Twitter, Stack Overflow, or - as a last resort - email. For a full list of options, visit our [Contact](https://www.jhaurawachsman.com/contact/) page. __Please DO NOT open a Github Issue unless it is related to Axiom specific code__. Hugo error messages generally are due to improper settings in the Config file added after installation.
 
-# Installation
-## Existing Website
+# Prerequisite 
 
-The instructions below, assume an existing Hugo website `example.com` in a working directory named `sites`.
+In order to install Axiom, you need the minimum required Hugo website structure.
+
+The instructions below, assume we have a working directory named `sites`.
 
 > When typing/copying the terminal commands below, don't include the prompt portion: `~ %`
 
+## New Website
+
+If you don't have an existing Hugo website, you can use the provided `exampleSite` as a starting point:
+
 ```shell
-~ % cd ~/sites/example.com
+~ % cd sites
+sites % git clone https://github.com/jhauraw/axiom.git axiom
+# Copy the exampleSite to a new Hugo project
+sites % cp -r axiom/exampleSite example.com
+sites % cd example.com
 ```
 
-If you don't yet have a website, see the "Example Website" -> "Quick Start" section below.
+Proceed to "Installation" next.
+
+## Existing Website
+
+If you already have an existing Hugo website, change directories into it's project root:
+
+> Replace `example.com` with your own project's directory name.
+
+```shell
+~ % cd sites/example.com
+```
+
+You'll need to remove your existing Hugo Config file, or merge Axiom's Config file with your current file. The recommended method is to backup your current Config file, and replace it with Axiom's Config file. You can then add any needed Config options from your backup.
+
+__After__ you complete the "Installation" step below, copy Axiom's example Config file into the root directory of your website:
+
+```shell
+example.com % cp themes/axiom/exampleSite/config.toml .
+```
+
+# Installation
+
+Hugo themes can be installed in two main ways. You can choose to install via Submodule or Clone/Download.
 
 ## Via Submodule
 
@@ -48,42 +79,20 @@ Submodules have the advantage of being much easier to update and keep in sync.
 Install Axiom as a Git clone:
 
 ```shell
-example.com % git clone --recurse-submodules https://github.com/jhauraw/axiom.git themes/axiom
+example.com % git clone https://github.com/jhauraw/axiom.git themes/axiom
 ```
 
 Optionally, remove the .git directory.
 
 To update the theme in the future, you'll need to delete the theme and re-clone it.
 
-# Example Website
-## Quick Start
-
-If you don't have an existing website, you can use the provided `exampleSite` as a starting point, by copying the entire directory contents:
-
-```shell
-example.com % cp -r themes/axiom/exampleSite/ .
-```
-
-This creates a fully functioning Hugo website that can be deployed as is from the `public` directory (after running the `hugo` build command).
-
-# Setup
-## Config File
-
-The Axiom Hugo `exampleSite` _Config_ file ([`config.toml`](https://github.com/jhauraw/axiom/blob/master/exampleSite/config.toml)) provides a starting point for theme customization and setup.
-
-Copy `config.toml` into the root directory of your website:
-
-> If you've copied the `exampleSite` in the step above you can skip this step. If you already have a config file, you'll need to manually add your settings back into Axiom's config file or vice-versa.
-
-```shell
-example.com % cp themes/axiom/exampleSite/config.toml .
-```
-
-Be sure to backup or commit your Config file!
+Axiom is now installed in your project's `themes` folder. Next, let's set it up and configure the options.
 
 # Config Options
 
-Options to customize Axiom, starting from the top of the Config file. Most of the options are detailed in the Hugo Configuration Documentation.
+Options to customize Axiom, starting from the top of the _Config_ file ([config.toml](https://github.com/jhauraw/axiom/blob/master/exampleSite/config.toml)). Many of the options are detailed in the Hugo Configuration Documentation.
+
+If you followed the "Prerequisite" step above, the Config file will be located at `~/sites/example.com/config.toml`. Open this file now and change/add/remove options as we work down the list of options.
 
 ## Core
 
@@ -283,7 +292,7 @@ Further detail on some of the options in the Images section:
 
 1. IMG tag: Entering a filename or path plus filename will create an image element (`<img>`) and source the asset entered. For example: `logo = "logo.png"` or `logo = brand/logo.svg`.
 
-1. SVG inline: Entering the keyword `svginline` will source the contents of an SVG file and inline the code between the anchor element (`<a>`). This option has advangtages because it allows you to manipulate the SVG with styles, such as changing the color or adding a hover effect. Also, it reduces http requests by one.
+1. SVG inline: Entering the keyword `svginline` will source the contents of an SVG file and inline the code between the anchor element (`<a>`). This option has advantages because it allows you to manipulate the SVG with styles, such as changing the color or adding a hover effect. Also, it reduces http requests by one.
 
 To use the `svginline` option you need to paste your SVG logo code into the snippet file located at [/exampleSite/content/logo-svg/](https://github.com/jhauraw/axiom/blob/master/exampleSite/content/logo-svg/index.html). Be careful not to remove the YAML front matter section of the file contents. You can add your own CSS to the SVG tag or use SVG fills and strokes.
 
@@ -532,6 +541,7 @@ Setting the `adsenseLazy` to true will delay the loading of the javascript sligh
 __Facebook__: If you set a Facebook Pixel Id in the _Services_ Config (`params.services` `facebookPixel`), the lightweight pixel tracker will be activated, otherwise all related javascript and code will not be output.
 
 ## Customization
+
 __CSS / JS__: Axiom is setup so you can use your own custom CSS and JS files. To take advantage of this feature, create the files in the _Assets_ directory (`/assets/`) and Axiom will do the rest, including preloading them for better performance. Name each file `custom.css` and `custom.js`.
 
 The Example site Assets directory contains a pair of empty custom CSS and JS files to get you started.
