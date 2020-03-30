@@ -1,0 +1,154 @@
+baseURL = "https://clair.eth.link"
+
+title = "clair.eth"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+
+theme = "axiom"
+
+relativeurls = true
+canonifyURLs = false
+rssLimit = 100
+enableEmoji = true
+summaryLength = 40
+enableRobotsTXT = true
+pluralizelisttitles = false
+footnoteReturnLinkContents = "&#8617;"
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[permalinks]
+post = "/:filename"
+
+[params]
+mainSections = ["post"]
+
+[params.services]
+analyticsId = "UA-162138544-1"
+adwordsId = "AW-DEV"
+adsenseId = "CA-PUB-DEV"
+adsenseAdSlotId = "ID-DEV"
+adsenseLazy = false
+adwordsConversionId = "ID-DEV"
+adwordsConversionValue = 0
+facebookApp = "1746881932121759"
+facebookPixel = "FB-DEV"
+disqusUser = "na"
+
+[params.path]
+image = "image/"
+video = "video/"
+author = "image/author/"
+brand = "image/brand/"
+font = "font/"
+pdf = "pdf/"
+
+[params.cdn]
+provider = "local"
+type = "image"
+
+[params.cloudinary]
+host = "https://res.cloudinary.com/CLOUD_NAME/"
+version = ""
+image = "image/upload/"
+raw = "raw/upload/"
+video = "video/upload/"
+
+[params.cloudinary.presets]
+base = "f_auto,q_auto/"
+page = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
+feature = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
+summary = "w_auto,dpr_auto,c_scale,f_auto,q_auto/"
+
+[params.img]
+width = "2048"
+height = "1024"
+default = "blue-sea-square.jpg"
+
+[params.font]
+type = ""
+files = []
+
+[params.brand]
+domain = "clair.eth.link"
+email = "julien@strat.cc"
+github = "example"
+facebook = ""
+twitter = "example"
+instagram = "example"
+youtube = "example"
+pinterest = "example"
+linkedin = "example"
+stacko = "10101010"
+faviconIco = "blue-sea-square.jpg"
+faviconAlt = "blue-sea-square.jpg"
+icon1To1 = "blue-sea-square.jpg"
+icon2To1 = "blue-sea-square.jpg"
+logo = ""
+
+[outputs]
+home = ["HTML", "ATOM"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+taxonomyTerm = ["HTML"]
+
+[outputFormats]
+[outputFormats.ATOM]
+name = "ATOM"
+baseName = "feed"
+mediaType = "application/atom+xml"
+
+[mediaTypes]
+[mediaTypes."application/atom+xml"]
+suffixes = ["atom"]
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+definitionList = false
+footnote = true
+linkify = false
+strikethrough = false
+table = true
+taskList = false
+typographer = false
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.parser]
+attribute = false
+autoHeadingID = false
+[markup.highlight]
+codeFences = false
+noClasses = false
+tabWidth = 2
+
+[menu]
+[[menu.main]]
+url = "/posts/"
+name = "Posts"
+weight = 1
+
+[[menu.mobile]]
+url = "/posts/"
+name = "Posts"
+weight = 1
+
+[[menu.mobile]]
+url = "/info/"
+name = "Info"
+weight = 2
+
+[[menu.foot]]
+url = "/posts/"
+name = "Posts"
+weight = 1
+
+[[menu.foot]]
+url = "/info/"
+name = "Info"
+weight = 2
+
+[languages]
+[languages."en-us"]
+weight = 1
+languageName = "US English"

@@ -1,0 +1,13 @@
+[default]
+name = "Julien Béranger"
+uri = "http://julienberanger.com/"
+email = "info@example.com"
+twitter = "https://twitter.com/julienbrg"
+image = "zyzkov.jpg"
+
+["Hugo Authors"]
+name = "Hugo Authors"
+uri = "https://example.com/"
+email = "info@example.com"
+twitter = "example"
+image = "default.webp"

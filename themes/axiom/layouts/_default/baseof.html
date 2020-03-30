@@ -1,0 +1,38 @@
+{{/* .ico at root, not in brand folder */}}
+{{- $imgFavIconIco := partial "cdn-src" (dict "Site" $.Site "Page" . "src" .Site.Params.brand.faviconIco) -}}
+
+{{- $imgFavIconAlt := printf "%s%s" .Site.Params.path.brand .Site.Params.brand.faviconAlt -}}
+{{- $imgFavIconAlt = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgFavIconAlt) -}}
+
+{{- $imgAppIcon := printf "%s%s" .Site.Params.path.brand .Site.Params.brand.icon1To1 -}}
+{{- $imgAppIcon = partial "cdn-src" (dict "Site" $.Site "Page" . "src" $imgAppIcon) -}}
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="robots" content="noodp,noydir">
+  <meta name="pinterest" content="nopin">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ $imgFavIconAlt }}">
+  <link rel="icon" type="image/x-icon" href="{{ $imgFavIconIco }}">
+  <link rel="apple-touch-icon" href="{{ $imgAppIcon }}">
+
+  {{- with .Permalink }}
+  <link rel="canonical" href="{{ . }}">
+  {{- end }}
+  {{- range .AlternativeOutputFormats }}
+  {{ printf `<link rel="%s" type="%s" href="%s" hreflang="%s"/>` .Rel .MediaType.Type .Permalink $.Site.LanguageCode | safeHTML }}
+  {{- end }}
+  {{ partial "styles-app" . }}
+  {{- partial "styles-type" . }}
+  {{- partial "structured-data" . }}
+  {{ partial "scripts-head" . }}
+</head>
+<body>
+  {{ partial "header" . }}
+  {{- block "main" . }}{{ end -}}
+  {{- partial "footer" . }}
+  {{- partial "scripts-foot" . }}
+</body>
+</html>

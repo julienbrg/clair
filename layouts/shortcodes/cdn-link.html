@@ -1,8 +1,0 @@
-{{/*
-  Cloudinary example usage:
-  {{< cdn-link src="image.jpg" >}}
-  {{< cdn-link src="image.jpg" preset="page" >}}
-  {{< cdn-link src="video.mp4" type="video" >}}
-  {{< cdn-link src="font.woff" type="raw" >}}
-*/}}
-{{- partial "cdn-src" (dict "Site" $.Site "Page" . "src" (.Get "src") "preset" (.Get "preset") "type" (.Get "type")) }}

@@ -1,0 +1,29 @@
+[home]
+other = "Home"
+
+[download]
+other = "Download"
+
+[pdf]
+other = "PDF"
+
+[recentPosts]
+other = "Articles récents"
+
+[twitterShare]
+other = "Share on Twitter"
+
+[facebookShare]
+other = "Share on Facebook"
+
+[e404Title]
+other = "Page Not Found"
+
+[e404Msg]
+other = "Sorry, we can't find that page. Please visit the %s page. (404 Error)"
+
+[theme]
+other = "Hugo + IPFS + ENS"
+
+[poweredby]
+other = "Powered by"

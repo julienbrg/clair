@@ -1,0 +1,18 @@
+/* global */
+body {
+  text-rendering: optimizelegibility;
+  @apply antialiased;
+}
+
+/* Pretty ups */
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Utilites */
+/* Vue.js v-cloak hide element until loaded */
+[v-cloak] {
+  @apply hidden;
+}

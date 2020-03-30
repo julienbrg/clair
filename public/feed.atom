@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us">
+  <title>clair.eth</title>
+  <subtitle>C&#39;est mieux quand c&#39;est clair.</subtitle>
+  <id>https://clair.eth.link/</id>
+  <author>
+    <name>clair.eth</name>
+    <uri>https://clair.eth.link/</uri>
+  </author>
+  <icon>https://clair.eth.link/image/brand/blue-sea-square.jpg</icon>
+  <logo>https://clair.eth.link/image/brand/blue-sea-square.jpg</logo>
+  <updated>2020-03-29T14:51:35Z</updated>
+  <link rel="self" type="application/atom+xml" href="https://clair.eth.link/feed.atom" hreflang="en-us"/>
+  <link rel="alternate" type="text/html" href="https://clair.eth.link/" hreflang="en-us"/>
+  <entry>
+    <title>Pourquoi et comment méditer ?</title>
+    <author>
+      <name>Julien Béranger</name>
+      <uri>http://julienberanger.com/</uri>
+    </author>
+    <id>https://clair.eth.link/meditation/</id>
+    <updated>2020-03-26T00:00:00Z</updated>
+    <published>2020-03-26T00:00:00Z</published>
+    <content type="html">&lt;p&gt;La méditation permet de réduire le stress, qui lui-même cause toutes sortes de maladies et de problèmes. Comment s&#39;y prendre exactement ?&lt;/p&gt;
+&lt;h2&gt;Préparation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Choisissez un endroit calme, ça peut être en intérieur ou en extérieur.&lt;/li&gt;
+&lt;li&gt;Prenez un coussin. C&#39;est important d&#39;être assis confortablement.&lt;/li&gt;
+&lt;li&gt;On peut méditer avec ou sans musique, si vous voulez vous mettre une musique d&#39;ambiance prenez &lt;a href=&#34;https://www.youtube.com/watch?v=O1zzVqrCEeU&#34;&gt;Call Of The Valley&lt;/a&gt; par exemple.&lt;/li&gt;
+&lt;li&gt;Prenez un minuteur avec si possible une &lt;a href=&#34;https://soundcloud.com/hitd-3/matthias-puech-talausblick-vom-hohlichtpass?in=hitd-3/sets/matthias-puech-alpestres&#34;&gt;musique sympa&lt;/a&gt; comme sonnerie pour éviter une fin de séance trop brusque, et réglez-le sur 10, 15 ou 20 minutes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Posture&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Asseyez-vous en tailleur, le dos le plus droit possible, les épaules bien relâchées.&lt;/li&gt;
+&lt;li&gt;Placez vos mains l&#39;une sur l&#39;autre, les paumes vers le haut, au niveau du bas-ventre. Vous pouvez aussi les placez sur vos genoux tout simplement.&lt;/li&gt;
+&lt;li&gt;Fermez les yeux sans forcer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Respiration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Respirez par le nez de la façon la plus régulière et la plus lente possible.&lt;/li&gt;
+&lt;li&gt;Essayez de &amp;quot;faire sonner&amp;quot; votre respiration pour qu&#39;elle soit la plus continue et la plus régulière possible.&lt;/li&gt;
+&lt;li&gt;En fin d&#39;inspiration ou d&#39;expiration, retenez votre souffle quelques secondes pour que la transition soit fluide.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pensées&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Votre esprit aura tendance à être envahi de pensées bordéliques et c&#39;est tout à fait normal. Essayez de toujours revenir à votre posture de départ (dos droit et épaules relâchées) et de vous concentrer sur la régularité de votre respiration. Plus vous pratiquerez, plus ça sera facile pour vous.&lt;/li&gt;
+&lt;li&gt;Ensuite, essayez d&#39;associer au va-et-vient de votre souffle la notion d&#39;entraide. Sur les expirations, pensez à toutes celles et à tous ceux qui agissent pour stopper ce stupide virus. Sur les inspirations, imaginez que votre souffle détruit la bêtise et l&#39;avidité.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Et voilà ! C&#39;est à peu près tout ce qu&#39;il faut savoir pour méditer. 🎉&lt;/p&gt;
+&lt;p&gt;Pratiquée de façon régulière, même 10 minutes par jour, la méditation est aujourd&#39;hui reconnue pour ses bienfaits à tous les niveaux. &lt;a href=&#34;https://www.youtube.com/watch?v=wR-xDUx3788&#34;&gt;Ce documentaire&lt;/a&gt; diffusé sur Arte explique tout ça en détail. Dans &lt;a href=&#34;https://www.youtube.com/watch?v=aKLxPDMtfr8&#34;&gt;cette conférence&lt;/a&gt;, Matthieu Ricard partage sa riche expérience de la méditation. Vous pouvez y piquer quelques astuces.&lt;/p&gt;
+&lt;h2&gt;Bonus&lt;/h2&gt;
+&lt;p&gt;L&#39;illustration principale est un portrait Master Hui Yan, un des personnage de &lt;a href=&#34;https://fr.wikipedia.org/wiki/A_Touch_of_Zen&#34;&gt;&lt;em&gt;A Touch of Zen&lt;/em&gt;&lt;/a&gt;, un film de King Hu sorti en 1971. Dans &lt;a href=&#34;https://www.youtube.com/watch?v=0AHz2B-_sLQ&#34;&gt;cet extrait&lt;/a&gt;, on peut voir Master Hui Yan et ses disciples courrir sur la cime des bambous. Dans la culture chinoise, les Immortels sont traditionnellement habillés en blanc et peuvent voler. Beaucoup de personnages de films chinois s&#39;entraînent tellement qu&#39;ils s&#39;approchent des Immortels taoïstes : c&#39;est pour ça qu&#39;ils sautillent de façon si légères dans les arbres ou sur les toits. Mais tous ne sont pas aussi forts que Master Hui Yan... 😉&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=0AHz2B-_sLQ&#34;&gt;&lt;img src=&#34;../image/hui-yan-before-attack.png&#34; alt=&#34;image/immortal-flying.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>How to deploy your own ERC-20 (and why)</title>
+    <author>
+      <name>Julien Béranger</name>
+      <uri>http://julienberanger.com/</uri>
+    </author>
+    <id>https://clair.eth.link/deploy-your-own-erc20/</id>
+    <updated>2020-01-15T00:00:00Z</updated>
+    <published>2020-01-15T00:00:00Z</published>
+    <content type="html">&lt;p&gt;My Stupid Token (&lt;a href=&#34;https://github.com/julienbrg/my-stupid-token/blob/master/MyStupidToken.sol&#34;&gt;MyStupidToken.sol&lt;/a&gt;) is a template of a basic &lt;a href=&#34;https://eips.ethereum.org/EIPS/eip-20&#34;&gt;ERC-20 token&lt;/a&gt;. It uses the set of Solidity contracts provided by OpenZeppelin (&lt;a href=&#34;https://github.com/OpenZeppelin/openzeppelin-solidity/contracts&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;It&#39;s one of the safest existing way to create a digital asset that can&#39;t be counterfeited. Once the contract is deployed, all the supply is sent to your own address. In the second part of this post, we&#39;ll review the most common use cases for the ERC-20 standard.&lt;/p&gt;
+&lt;p&gt;We will first deploy on &lt;a href=&#34;https://goerli.net/&#34;&gt;Goerli network&lt;/a&gt;, which is an Ethereum testnet, to make sure everything works perfectly, then we&#39;ll deploy the same contract on Ethereum mainnet. You&#39;re going to need real money (a few cents) to deploy your contract on Ethereum and to interact with it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://metamask.io/&#34;&gt;Metamask&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Back it up as indicated.&lt;/li&gt;
+&lt;li&gt;Get some &lt;a href=&#34;https://goerli.net/&#34;&gt;Goerli&lt;/a&gt; ETH on the &lt;a href=&#34;https://faucet.goerli.mudit.blog/&#34;&gt;Goerli Social Faucet&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/julienbrg/my-stupid-token/blob/master/MyStupidToken.sol&#34;&gt;MyStupidToken.sol&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;pragma solidity ^0.5.0;
+
+import &amp;quot;https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol&amp;quot;;
+import &amp;quot;https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol&amp;quot;;
+
+contract MyStupidToken is ERC20, ERC20Detailed
+{
+    constructor()
+	public ERC20Detailed(&amp;quot;My Stupid Token&amp;quot;, &amp;quot;MST&amp;quot;, 18)
+	{
+		_mint(msg.sender, 10000*10**18);
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy the piece of code above, and go to &lt;a href=&#34;http://remix.ethereum.org/&#34;&gt;Remix&lt;/a&gt;, click on &#39;New File&#39; (you&#39;ll rename it later), paste your code here, at line 9 change the name (&#39;My Stupid Token&#39;) and the 3 letters (&#39;MST&#39;), at line 11 change the supply (10000).&lt;/li&gt;
+&lt;li&gt;Then in the file explorer (on the left), do a right click on your file and select &#39;rename&#39;. Make sure each word of your &#39;.sol&#39; file name starts with a capital letter.&lt;/li&gt;
+&lt;li&gt;In the left menu, click on &#39;Solidity Compiler&#39;, then click on the big &#39;Compile&#39; button.&lt;/li&gt;
+&lt;li&gt;In the left menu again, click on &#39;Deploy &amp;amp; run transactions&#39; and select &#39;Injected Web3&#39; as &#39;environment&#39;.&lt;/li&gt;
+&lt;li&gt;In Metamask (Chrome extension), make sure you&#39;ve selected the Goerli network (the blue one).&lt;/li&gt;
+&lt;li&gt;Click on &#39;Deploy&#39;. Copy the address of this contract.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The token contract is now deployed on Goerli network, which also means that you currently have 100% of the supply in your wallet. You can check what&#39;s happening on the (Goerli) blockchain thanks to Etherscan:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://goerli.etherscan.io/&#34;&gt;https://goerli.etherscan.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Add a custom token in Metamask&lt;/h2&gt;
+&lt;p&gt;Let&#39;s add your token in Metamask:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In Metamask, click on the left menu.&lt;/li&gt;
+&lt;li&gt;At the bottom of the window, click on &#39;Add a token&#39;.&lt;/li&gt;
+&lt;li&gt;Select &#39;Custom token&#39;, in &#39;Token contract address&#39;, paste the address of your contract, fill the &#39;Symbol&#39; field with the three letters, and put &#39;18&#39; in the &#39;Decimals&#39; field.&lt;/li&gt;
+&lt;li&gt;Click on &#39;Next&#39;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Deploy on Ethereum&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Get yourself a handful of ethers (ETH): feel free to ask me some via &lt;a href=&#34;https://t.me/julienbrg&#34;&gt;Telegram&lt;/a&gt;. You can also click on &#39;deposit&#39; and use Coinswitch to buy some ETH with your credit card.&lt;/li&gt;
+&lt;li&gt;Go back to &lt;a href=&#34;http://remix.ethereum.org/&#34;&gt;Remix&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Select &#39;injected Web3&#39; as environment but select &#39;Ethereum mainnet&#39; in your Metamask.&lt;/li&gt;
+&lt;li&gt;Deploy and copy the address of your contract.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can send your own tokens to your friends!&lt;/p&gt;
+&lt;h2&gt;Why would you deploy your own ERC-20?&lt;/h2&gt;
+&lt;p&gt;So you now have your own ERC-20 tokens in your pocket. They&#39;re uncounterfeitable, your little system is entirely verifiable and transparent. It is also more than secure: attack and break the Ethereum network is no pic-nic. As of January 2020, there are billions of US dollars worth of ERC-20s currently flowing from wallets to wallets on the Ethereum blockchain... but yours is worth absolutely nothing: it&#39;s what we call a &#39;shitcoin&#39;.&lt;/p&gt;
+&lt;p&gt;Thousands of scammers sold this kind of assets and made a lot of money. Others included their asset in a given app architecture, the asset is then called a &#39;utility token&#39;. But yo, what happens if the team who&#39;s building that super mega platform just don&#39;t make it? What if this service is actually not solving any problem for anyone? Well, the token will not be needed, and there won&#39;t be anyone to buy it on the markets, which means that its price could quickly get to zero. In some cases it&#39;s pretty unclear if the team failed, or if they knew from the start that the Frankenstein-style product described in their so-called &#39;white paper&#39; had any relevance whatsoever.&lt;/p&gt;
+&lt;p&gt;Then you have ERC-20s that represent shares of a company. This is easier to understand: instead of having your capital in the form of paper, it&#39;s a digital version of your company&#39;s shares. It&#39;s easier to manage and technically can offer a bunch of sexy features: holders may be able to directly redeem their shares when they want, enjoy cashing in some dividends, take part of the project&#39;s governance, get all sorts of discounts just proving they actually hold it. This is all absolutely great, but every local jurisdictions happen to have their own rules for these things and you&#39;re supposed to respect them.&lt;/p&gt;
+&lt;p&gt;ERC-20s also can be used as a reputation token: you do something and get one unit as a reward, then when you have a certain number of them you get an access other things. On-chain voting is an example: most of DAOs have ERC-20s that represent voting power. ERC-20s are transferable so they&#39;re not tight to a specific wallet or person.&lt;/p&gt;
+&lt;p&gt;On the currency thing, &lt;a href=&#34;http://www.lietaer.com/&#34;&gt;Bernard Lietaer&lt;/a&gt; often compared the US dollar to monoculture. I do believe we actually need a diversity of currencies if we want a more resilient financial system. In case if you don&#39;t know, there are thousands of complementary currencies in circulation on this planet, probably more than 5,000 different systems including time banking, mutual credit systems, and many others. The two important things to ask when you look at an alternative currency is &amp;quot;who issued it?&amp;quot; and &amp;quot;how was it distributed?&amp;quot;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://oasis.app/trade/market/WETH/DAI&#34;&gt;DAI&lt;/a&gt; is an ERC-20. Its issuance process is designed in such a way that its price is stable: 1 DAI = 1 USD. No one is saying that it&#39;s perfect and flawless, but at least it&#39;s been stable for more than three years now. The decentralized finance, now called &#39;&lt;a href=&#34;https://defipulse.com/&#34;&gt;DeFi&lt;/a&gt;&#39;, has just crossed &lt;a href=&#34;https://www.coindesk.com/why-defis-billion-dollar-milestone-matters&#34;&gt;1 billion USD eq.&lt;/a&gt; locked in all sorts of contracts, and a lot of these services all use the ERC-20 standard.&lt;/p&gt;</content>
+  </entry>
+</feed>
