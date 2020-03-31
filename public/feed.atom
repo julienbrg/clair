@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us">
   <title>clair.eth</title>
-  <subtitle>C&#39;est mieux quand c&#39;est clair.</subtitle>
+  <subtitle>C&#39;est clair comme de l&#39;eau de roche</subtitle>
   <id>https://clair.eth.link/</id>
   <author>
     <name>clair.eth</name>
@@ -9,7 +9,7 @@
   </author>
   <icon>https://clair.eth.link/image/brand/blue-sea-square.jpg</icon>
   <logo>https://clair.eth.link/image/brand/blue-sea-square.jpg</logo>
-  <updated>2020-03-29T14:51:35Z</updated>
+  <updated>2020-03-30T18:03:08Z</updated>
   <link rel="self" type="application/atom+xml" href="https://clair.eth.link/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://clair.eth.link/" hreflang="en-us"/>
   <entry>
@@ -19,8 +19,8 @@
       <uri>http://julienberanger.com/</uri>
     </author>
     <id>https://clair.eth.link/meditation/</id>
-    <updated>2020-03-26T00:00:00Z</updated>
-    <published>2020-03-26T00:00:00Z</published>
+    <updated>2020-03-30T00:00:00Z</updated>
+    <published>2020-03-30T00:00:00Z</published>
     <content type="html">&lt;p&gt;La méditation permet de réduire le stress, qui lui-même cause toutes sortes de maladies et de problèmes. Comment s&#39;y prendre exactement ?&lt;/p&gt;
 &lt;h2&gt;Préparation&lt;/h2&gt;
 &lt;ul&gt;
@@ -39,17 +39,17 @@
 &lt;ul&gt;
 &lt;li&gt;Respirez par le nez de la façon la plus régulière et la plus lente possible.&lt;/li&gt;
 &lt;li&gt;Essayez de &amp;quot;faire sonner&amp;quot; votre respiration pour qu&#39;elle soit la plus continue et la plus régulière possible.&lt;/li&gt;
-&lt;li&gt;En fin d&#39;inspiration ou d&#39;expiration, retenez votre souffle quelques secondes pour que la transition soit fluide.&lt;/li&gt;
+&lt;li&gt;En fin d&#39;inspiration ou d&#39;expiration, retenez légèrement votre souffle pour que la transition soit fluide et souple.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Pensées&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Votre esprit aura tendance à être envahi de pensées bordéliques et c&#39;est tout à fait normal. Essayez de toujours revenir à votre posture de départ (dos droit et épaules relâchées) et de vous concentrer sur la régularité de votre respiration. Plus vous pratiquerez, plus ça sera facile pour vous.&lt;/li&gt;
-&lt;li&gt;Ensuite, essayez d&#39;associer au va-et-vient de votre souffle la notion d&#39;entraide. Sur les expirations, pensez à toutes celles et à tous ceux qui agissent pour stopper ce stupide virus. Sur les inspirations, imaginez que votre souffle détruit la bêtise et l&#39;avidité.&lt;/li&gt;
+&lt;li&gt;Ensuite, essayez d&#39;associer au va-et-vient de votre souffle l&#39;idée d&#39;entraide. Sur les expirations, pensez à toutes celles et à tous ceux qui agissent pour stopper ce stupide virus. Sur les inspirations, imaginez que votre souffle détruit la bêtise et l&#39;avidité.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Et voilà ! C&#39;est à peu près tout ce qu&#39;il faut savoir pour méditer. 🎉&lt;/p&gt;
 &lt;p&gt;Pratiquée de façon régulière, même 10 minutes par jour, la méditation est aujourd&#39;hui reconnue pour ses bienfaits à tous les niveaux. &lt;a href=&#34;https://www.youtube.com/watch?v=wR-xDUx3788&#34;&gt;Ce documentaire&lt;/a&gt; diffusé sur Arte explique tout ça en détail. Dans &lt;a href=&#34;https://www.youtube.com/watch?v=aKLxPDMtfr8&#34;&gt;cette conférence&lt;/a&gt;, Matthieu Ricard partage sa riche expérience de la méditation. Vous pouvez y piquer quelques astuces.&lt;/p&gt;
 &lt;h2&gt;Bonus&lt;/h2&gt;
-&lt;p&gt;L&#39;illustration principale est un portrait Master Hui Yan, un des personnage de &lt;a href=&#34;https://fr.wikipedia.org/wiki/A_Touch_of_Zen&#34;&gt;&lt;em&gt;A Touch of Zen&lt;/em&gt;&lt;/a&gt;, un film de King Hu sorti en 1971. Dans &lt;a href=&#34;https://www.youtube.com/watch?v=0AHz2B-_sLQ&#34;&gt;cet extrait&lt;/a&gt;, on peut voir Master Hui Yan et ses disciples courrir sur la cime des bambous. Dans la culture chinoise, les Immortels sont traditionnellement habillés en blanc et peuvent voler. Beaucoup de personnages de films chinois s&#39;entraînent tellement qu&#39;ils s&#39;approchent des Immortels taoïstes : c&#39;est pour ça qu&#39;ils sautillent de façon si légères dans les arbres ou sur les toits. Mais tous ne sont pas aussi forts que Master Hui Yan... 😉&lt;/p&gt;
+&lt;p&gt;L&#39;illustration principale est un portrait Master Hui Yan, un des personnage de &lt;a href=&#34;https://fr.wikipedia.org/wiki/A_Touch_of_Zen&#34;&gt;&lt;em&gt;A Touch of Zen&lt;/em&gt;&lt;/a&gt;, un film de King Hu sorti en 1971. Dans &lt;a href=&#34;https://www.youtube.com/watch?v=0AHz2B-_sLQ&#34;&gt;cet extrait&lt;/a&gt;, on peut voir Master Hui Yan et ses disciples courrir sur la cime des bambous. Dans la culture chinoise, les Immortels sont traditionnellement habillés en blanc et peuvent voler. Beaucoup de personnages de films chinois s&#39;entraînent tellement qu&#39;ils s&#39;approchent des Immortels taoïstes : c&#39;est pour ça qu&#39;on peut les voir sautiller de façon si légères dans les arbres ou sur les toits. Mais tous ne sont pas aussi forts que Master Hui Yan... 😉&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=0AHz2B-_sLQ&#34;&gt;&lt;img src=&#34;../image/hui-yan-before-attack.png&#34; alt=&#34;image/immortal-flying.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
   <entry>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://clair.eth.link/post/</loc>
+    <lastmod>2020-03-30T00:00:00Z</lastmod>
+  </url>
+  <url>
+    <loc>https://clair.eth.link/meditation/</loc>
+    <lastmod>2020-03-30T00:00:00Z</lastmod>
+  </url>
+  <url>
     <loc>https://clair.eth.link/</loc>
     <lastmod>2020-03-27T00:00:00Z</lastmod>
   </url>
   <url>
     <loc>https://clair.eth.link/info/</loc>
     <lastmod>2020-03-27T00:00:00Z</lastmod>
-  </url>
-  <url>
-    <loc>https://clair.eth.link/post/</loc>
-    <lastmod>2020-03-26T00:00:00Z</lastmod>
-  </url>
-  <url>
-    <loc>https://clair.eth.link/meditation/</loc>
-    <lastmod>2020-03-26T00:00:00Z</lastmod>
   </url>
   <url>
     <loc>https://clair.eth.link/deploy-your-own-erc20/</loc>

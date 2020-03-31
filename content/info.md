@@ -12,6 +12,6 @@ Clair.eth est un blog hébergé sur [IPFS](https://ipfs.io/), c'est-à-dire de f
 
 Le nom de domaine de ce site est enregistré grâce à l'ENS (Ethereum Name Service). Il pointe vers le hash de la dernière version du blog. Ce lien entre le nom de domaine et le hash du blog est vérifiable [sur le site de l'ENS](https://app.ens.domains/name/clair.eth).
 
-Ce blog est développé sous [Hugo](https://gohugo.io/), un générateur de site statique (SSG) et utilise un [*theme*](https://themes.gohugo.io/axiom/) proposé par [Jhaura Wachsman](https://github.com/jhauraw).
+Ce blog est développé sous [Hugo](https://gohugo.io/), un générateur de site statique (SSG) et utilise un [*theme*](https://themes.gohugo.io/axiom/) proposé par [Jhaura Wachsman](https://github.com/jhauraw). Le code est [disponible sur Github](https://github.com/julienbrg/clair).
 
 Crédit photo : [Steven Wilcox](https://unsplash.com/photos/0wZawDqsDHo)
